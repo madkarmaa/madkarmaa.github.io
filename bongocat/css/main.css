@@ -6,6 +6,10 @@ font-family: 'Fredoka', sans-serif;
 font-family: 'Julius Sans One', sans-serif;
 */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     overflow: hidden;
 }
@@ -82,7 +86,18 @@ body {
     opacity: 0.5;
 }
 
+.badge {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 10px;
+}
+
 @media all and (max-width: 768px) {
+    html {
+        background-position: 60%;
+    }
+
     #title, ::-webkit-scrollbar {
         display: none;
     }
