@@ -4,7 +4,18 @@ font-family: 'Audiowide', cursive;
 font-family: 'Fredoka', sans-serif;
 
 font-family: 'Julius Sans One', sans-serif;
+
+font-family: 'Rajdhani', sans-serif;
+
+font-family: 'Jura', sans-serif;
+
+font-family: 'Michroma', sans-serif;
 */
+
+:root {
+    --theme-bg-color: #ffffff25;
+    --pink: rgba(185, 73, 183, 1);
+}
 
 * {
     box-sizing: border-box;
@@ -14,8 +25,18 @@ body {
     overflow: hidden;
 }
 
-:root {
-    --theme-bg-color: #ffffff25;
+h1, h2, h3 {
+    font-family: 'Michroma', sans-serif;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
 /* width */
@@ -42,6 +63,9 @@ body {
 
 .app {
     font-family: 'Fredoka', sans-serif;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
     font-weight: 400;
     background-color: var(--theme-bg-color);
     max-width: 1250px;
