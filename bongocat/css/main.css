@@ -5,11 +5,15 @@ font-family: 'Fredoka', sans-serif;
 
 font-family: 'Julius Sans One', sans-serif;
 
-font-family: 'Rajdhani', sans-serif;
-
 font-family: 'Jura', sans-serif;
 
+font-family: 'Kdam Thmor Pro', sans-serif;
+
+font-family: 'Merienda', cursive;
+
 font-family: 'Michroma', sans-serif;
+
+font-family: 'Rajdhani', sans-serif;
 */
 
 :root {
@@ -35,7 +39,7 @@ html, body {
 }
 
 h1, h2, h3 {
-    font-family: 'Michroma', sans-serif;
+    font-family: 'Merienda', cursive;
 }
 
 a {
@@ -216,6 +220,6 @@ a:hover {
     }
 
     .app {
-        top: -220px;
+        top: -210px;
     }
 }
