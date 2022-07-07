@@ -164,6 +164,9 @@ a:hover {
 
 .btn-group {
     width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
 }
 
 .btn-group:after {
@@ -255,6 +258,10 @@ a:hover {
 
     #loader {
         left: 54%;
+    }
+
+    .btn-group {
+        position: initial;
     }
 
     .btn-group button {
