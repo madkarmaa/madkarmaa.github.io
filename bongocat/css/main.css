@@ -18,6 +18,7 @@ font-family: 'Rajdhani', sans-serif;
 
 :root {
     --theme-bg-color: #ffffff25;
+    --black-fade: #00000040;
     --pink: rgba(185, 73, 183, 1);
 }
 
@@ -154,7 +155,7 @@ a:hover {
 .btn-group button {
     font-family: 'Jura', sans-serif;
     font-size: 17.5px;
-    background-color: var(--theme-bg-color);
+    background-color: #4d1a5b;
     border: 2px solid #fff;
     color: white;
     padding: 10px 24px;
@@ -190,6 +191,36 @@ a:hover {
 
 .commands {
     display: none;
+}
+
+.command-container {
+    background-color: var(--black-fade);
+    padding: 10px 10px;
+    border-top-right-radius: 8px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.command-container:first-child {
+    margin-top: 15px;
+}
+
+.command-container:not(:first-child) {
+    margin-bottom: 15px;
+}
+
+.command-container:last-child {
+    margin-bottom: 5px;
+}
+
+.command-container:not(:last-child) {
+    margin-top: 15px;
+}
+
+.command-title {
+    font-family: 'Jura', sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 @-webkit-keyframes spin {
