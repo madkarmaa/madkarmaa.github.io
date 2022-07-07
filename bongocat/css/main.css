@@ -150,6 +150,36 @@ a:hover {
     animation: spin 2s linear infinite;
 }
 
+.btn-group button {
+    font-family: 'Jura', sans-serif;
+    font-size: 17.5px;
+    background-color: var(--theme-bg-color);
+    border: 2px solid #fff;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left;
+    width: 16.6%;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none;
+}
+
+.btn-group button:hover {
+    background-color: var(--pink);
+}
+
 @-webkit-keyframes spin {
     0% {
         -webkit-transform: rotate(0deg);
@@ -221,5 +251,14 @@ a:hover {
 
     .app {
         top: -210px;
+    }
+
+    .btn-group button {
+        width: 48%;
+        margin: 2px;
+    }
+
+    .btn-group button:not(:last-child) {
+        border-right: solid;
     }
 }
