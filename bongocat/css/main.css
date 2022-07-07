@@ -259,6 +259,6 @@ a:hover {
     }
 
     .btn-group button:not(:last-child) {
-        border-right: solid;
+        border-right: 2px solid #fff;
     }
 }
