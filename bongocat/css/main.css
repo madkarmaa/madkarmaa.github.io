@@ -253,6 +253,10 @@ a:hover {
         top: -210px;
     }
 
+    #loader {
+        left: 54%;
+    }
+
     .btn-group button {
         width: 48%;
         margin: 2px;
