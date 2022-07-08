@@ -28,7 +28,8 @@ font-family: 'Rajdhani', sans-serif;
 
 body {
     overflow: hidden;
-    background-image: url("https://madkarmaa.github.io/bongocat/img/background.jpg");
+    background: url("https://madkarmaa.github.io/bongocat/img/background2.jpg");
+    background-size: calc(100% + 50px);
 }
 
 html, body {
@@ -81,6 +82,6 @@ a:hover {
     }
 
     body {
-        background-position: 60%;
+        background: #5f38a9;
     }
 }
