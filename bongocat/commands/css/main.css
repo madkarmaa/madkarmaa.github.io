@@ -34,15 +34,12 @@ body {
     overflow: hidden;
 }
 
-html,
-body {
+html, body {
     margin: 0;
     height: 100%;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: 'Merienda', cursive;
 }
 
@@ -291,8 +288,7 @@ a:hover {
         background-position: 60%;
     }
 
-    #title,
-    ::-webkit-scrollbar {
+    #title, ::-webkit-scrollbar {
         display: none;
     }
 
