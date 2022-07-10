@@ -59,32 +59,23 @@ h1, h2, h3 {
     background: #fff;
 }
 
-#title {
-    font-size: 150px;
-    font-family: 'Audiowide', cursive;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    top: 12%;
-    width: fit-content;
-    text-align: center;
-    color: #fff;
-    text-shadow: 7px 7px var(--black-fade);
-}
-
 .demo a {
     position: absolute;
     bottom: 20px;
-    left: 50%;
+    left: 48%;
     z-index: 2;
     display: inline-block;
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     color: #fff;
-    font: normal 400 20px/1 'Josefin Sans', sans-serif;
+    font: normal 400 20px/1 'Fredoka', sans-serif;;
     letter-spacing: .1em;
     text-decoration: none;
     transition: opacity .3s;
+}
+
+#section03.demo a {
+    left: 46%;
 }
 
 .demo a:hover {
@@ -110,7 +101,7 @@ section::after {
 
 section h1 {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     z-index: 2;
     -webkit-transform: translate(-50%, -50%);
@@ -222,8 +213,8 @@ section h1 {
     margin-left: -12px;
     border-left: 1px solid #fff;
     border-bottom: 1px solid #fff;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
     -webkit-animation: sdb07 2s infinite;
     animation: sdb07 2s infinite;
     opacity: 0;
