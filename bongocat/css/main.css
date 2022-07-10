@@ -35,12 +35,13 @@ html, body {
 }
 
 h1, h2, h3 {
-    font-family: 'Merienda', cursive;
+    font-family: 'Jura', sans-serif !important;
 }
 
 /* width */
 ::-webkit-scrollbar {
     width: 7.5px;
+    display: none;
 }
 
 /* Track */
@@ -62,13 +63,12 @@ h1, h2, h3 {
 .demo a {
     position: absolute;
     bottom: 20px;
-    left: 48%;
     z-index: 2;
     display: inline-block;
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     color: #fff;
-    font: normal 400 20px/1 'Fredoka', sans-serif;;
+    font: normal 400 20px/1 'Fredoka', sans-serif;
     letter-spacing: .1em;
     text-decoration: none;
     transition: opacity .3s;
@@ -76,6 +76,14 @@ h1, h2, h3 {
 
 #section03.demo a {
     left: 46%;
+}
+
+#section01.demo a {
+    left: 47%;
+}
+
+#section02.demo a {
+    left: 46.3%;
 }
 
 .demo a:hover {
@@ -110,6 +118,14 @@ section h1 {
     font: normal 300 64px/1 'Josefin Sans', sans-serif;
     text-align: center;
     white-space: nowrap;
+}
+
+#section01 h1 {
+    font-size: 100px;
+}
+
+#section02 h1, #section03 h1 {
+    top: 12.5%;
 }
 
 #section01 {
@@ -271,11 +287,36 @@ section h1 {
         display: none;
     }
 
-    .demo a {
-        left: 42.5%;
+    section h1 {
+        white-space: initial;
+        width: fit-content;
+        font-size: 50px !important;
+        left: 50%;
+        top: 12.5%;
+    }
+
+    #section01 h1 {
+        font-weight: 600;
+        top: 25%;
+    }
+
+    #section02 h1 {
+        font-size: 40px !important;
+    }
+
+    #section03 h1 {
+        font-size: 40px !important;
     }
 
     #section03.demo a {
-        left: 35%;
+        left: 36.2%;
+    }
+
+    #section01.demo a {
+        left: 40%;
+    }
+
+    #section02.demo a {
+        left: 37%;
     }
 }
