@@ -271,7 +271,11 @@ section h1 {
         display: none;
     }
 
-    body {
-        background: #5f38a9;
+    .demo a {
+        left: 42.5%;
+    }
+
+    #section03.demo a {
+        left: 35%;
     }
 }
