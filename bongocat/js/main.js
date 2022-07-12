@@ -16,6 +16,10 @@ document.getElementById("invite").onclick = function () {
   );
 };
 
+document.getElementById("container").onclick = function () {
+  window.open("https://madkarmaa.github.io/bongocat/commands", "_blank");
+};
+
 window.onscroll = function () {
   myFunction();
 };
