@@ -445,5 +445,6 @@ section h1:not(.text-title) {
   #redirect {
     font-size: 15px;
     padding: 9.55px 26.25px;
+    margin-top: 10px;
   }
 }
