@@ -442,13 +442,8 @@ section h1:not(.text-title) {
     left: 52%;
   }
 
-  #container {
-    top: 47%;
-    left: 47%;
-    background: transparent;
-    height: 55%;
-    border-radius: 0;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+  #redirect {
+    font-size: 15px;
+    padding: 9.55px 26.25px;
   }
 }
