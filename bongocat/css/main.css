@@ -438,8 +438,8 @@ section h1:not(.text-title) {
   }
 
   .s2content {
+    top: 43%;
     width: 85%;
-    left: 52%;
   }
 
   #redirect {
