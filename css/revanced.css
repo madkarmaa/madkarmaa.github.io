@@ -173,8 +173,8 @@ a.button[id*="open"] i {
         flex-direction: column;
     }
 
-    main .app-container {
-        width: 100%;
+    .app-container {
+        max-width: 100%;
     }
 
     svg {
