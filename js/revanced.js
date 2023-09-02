@@ -68,7 +68,7 @@ refreshLinks();
 <div>
     <a id="youtube-download" class="button large">
         <i>open_in_new</i>
-        Download from ApkMirror
+        APKMirror
     </a>
 </div>
 `,

@@ -118,8 +118,8 @@ a.button[id*="open"] i {
     /* justify-content: center; */
     flex-direction: column;
     gap: 10px;
-    min-height: 100%;
     max-width: calc(100% / 3);
+    /* width: calc(100% / 3); */
 }
 
 .app-container>div:has(a.button) {
@@ -175,6 +175,7 @@ a.button[id*="open"] i {
 
     .app-container {
         max-width: 100%;
+        /* width: 100%; */
     }
 
     svg {
