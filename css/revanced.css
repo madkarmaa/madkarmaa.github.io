@@ -89,18 +89,27 @@ a.button:hover {
     text-decoration: none !important;
 }
 
-a[id*="download"] {
+a.button[id*="download"] {
     background-color: var(--accent-color);
+    color: var(--grey-four) !important;
+}
+
+a.button[id*="download"] i {
     color: var(--grey-four) !important;
 }
 
 .button {
     margin: 0 !important;
+    gap: 20px !important;
 }
 
 a.button[id*="open"] {
     color: var(--white) !important;
     background-color: var(--grey-two) !important;
+}
+
+a.button[id*="open"] i {
+    color: var(--white) !important;
 }
 
 .app-container {

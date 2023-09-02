@@ -49,8 +49,14 @@ refreshLinks();
 <div>Published ${latestManagerDate.toLocaleString()}</div>
 <span class="comment">${manager.assets[0].name}</span>
 <div>
-    <a id="manager-download" class="button large">Download</a>
-    <a id="manager-open" class="button large" onclick="window.open('//revanced.app/download', '_blank')">Go to website</a>
+    <a id="manager-download" class="button large">
+        <i>download</i>
+        Download
+    </a>
+    <a id="manager-open" class="button large" onclick="window.open('//revanced.app/download', '_blank')">
+        <i>open_in_new</i>
+        Go to website
+    </a>
 </div>
 `,
     });
@@ -67,7 +73,10 @@ refreshLinks();
     then click the download button.
 </div>
 <div>
-    <a id="youtube-download" class="button large">Download from ApkMirror</a>
+    <a id="youtube-download" class="button large">
+        <i>open_in_new</i>
+        Download from ApkMirror
+    </a>
 </div>
 `,
     });
@@ -81,9 +90,14 @@ refreshLinks();
 <div>Published ${latestMicroGDate.toLocaleString()}</div>
 <span class="comment">${microGApk.name}</span>
 <div>
-    <a id="microg-download" class="button large">Download</a>
-    <a id="microg-open" class="button large"
-        onclick="window.open('//github.com/inotia00/VancedMicroG/releases/latest', '_blank')">Go to website</a>
+    <a id="microg-download" class="button large">
+        <i>download</i>
+        Download
+    </a>
+    <a id="microg-open" class="button large" onclick="window.open('//github.com/inotia00/VancedMicroG/releases/latest', '_blank')">
+        <i>open_in_new</i>
+        Go to website
+    </a>
 </div>
 `,
     });
