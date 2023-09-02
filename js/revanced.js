@@ -33,12 +33,13 @@ refreshLinks();
     const latestManagerDate = new Date(Date.parse(manager.metadata.published_at));
     const latestMicroGDate = new Date(Date.parse(microGData.published_at));
     const suggestedYtVersion = latestYtSuggestedVersion(patches);
+    const versionDashed = suggestedYtVersion.replace(/\./g, '-');
 
     const managerContainer = createEl('div', {
         id: 'revanced-manager-container',
         classList: 'app-container',
         innerHTML: `
-<h1>ReVanced Manager</h1>
+<h1><span style="color: var(--white) !important">ReVanced</span> Manager</h1>
 <div>Version <span class="comment">${manager.metadata.tag_name.replace(/v|version /i, '')}</span></div>
 <div>Published ${latestManagerDate.toLocaleString()}</div>
 <span class="comment">${manager.assets[0].name}</span>
@@ -47,7 +48,7 @@ refreshLinks();
         <i>download</i>
         Download
     </a>
-    <a id="manager-open" class="button large" onclick="window.open('//revanced.app/download', '_blank')">
+    <a id="manager-open" class="button large" href="//revanced.app/download">
         <i>open_in_new</i>
         Go to website
     </a>
@@ -88,7 +89,7 @@ refreshLinks();
         <i>download</i>
         Download
     </a>
-    <a id="microg-open" class="button large" onclick="window.open('//github.com/inotia00/VancedMicroG/releases/latest', '_blank')">
+    <a id="microg-open" class="button large" href="//github.com/inotia00/VancedMicroG/releases/latest">
         <i>open_in_new</i>
         Go to website
     </a>
@@ -99,23 +100,12 @@ refreshLinks();
     document.querySelector('main').append(managerContainer, ytContainer, microGContainer);
 
     const downloadManagerBtn = document.querySelector('#manager-download');
-    downloadManagerBtn.addEventListener('click', () => {
-        window.open(manager.assets[0].browser_download_url, '_blank');
-    });
-
     const downloadYtBtn = document.querySelector('#youtube-download');
-    downloadYtBtn.addEventListener('click', () => {
-        const versionDashed = suggestedYtVersion.replace(/\./g, '-');
-        window.open(
-            `https://www.apkmirror.com/apk/google-inc/youtube/youtube-${versionDashed}-release/youtube-${versionDashed}-android-apk-download/`,
-            '_blank'
-        );
-    });
-
     const downloadMicroGBtn = document.querySelector('#microg-download');
-    downloadMicroGBtn.addEventListener('click', () => {
-        window.open(microGApk.browser_download_url, '_blank');
-    });
+
+    downloadManagerBtn.href = manager.assets[0].browser_download_url;
+    downloadYtBtn.href = `https://www.apkmirror.com/apk/google-inc/youtube/youtube-${versionDashed}-release/youtube-${versionDashed}-android-apk-download/#breadcrumbs`;
+    downloadMicroGBtn.href = microGApk.browser_download_url;
 
     refreshLinks();
 })().catch(() => {
