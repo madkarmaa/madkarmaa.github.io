@@ -44,7 +44,7 @@ body * {
 
 main {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-evenly;
     flex-direction: row;
     width: 100%;
@@ -114,7 +114,7 @@ a.button[id*="open"] i {
 
 .app-container {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     gap: 10px;
     min-height: 100%;

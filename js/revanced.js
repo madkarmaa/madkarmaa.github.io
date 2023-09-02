@@ -22,10 +22,9 @@ refreshLinks();
 // let isLightTheme = true;
 
 (async () => {
-    const patchesData = await (await fetch('https://api.revanced.app/v2/patches/latest', { mode: 'cors' })).json();
-    const managerData = await (
-        await fetch('https://api.revanced.app/v2/revanced-manager/releases/latest', { mode: 'cors' })
-    ).json();
+    // { mode: 'cors' }
+    const patchesData = await (await fetch('https://api.revanced.app/v2/patches/latest')).json();
+    const managerData = await (await fetch('https://api.revanced.app/v2/revanced-manager/releases/latest')).json();
     const microGData = await (await fetch('https://api.github.com/repos/inotia00/VancedMicroG/releases/latest')).json();
     const patches = patchesData.patches;
     const manager = managerData.release;
