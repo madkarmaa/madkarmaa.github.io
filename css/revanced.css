@@ -119,6 +119,7 @@ a.button[id*="open"] i {
     flex-direction: column;
     gap: 10px;
     min-height: 100%;
+    max-width: calc(100% / 3);
 }
 
 .app-container>div:has(a.button) {

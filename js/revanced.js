@@ -63,9 +63,7 @@ refreshLinks();
 <h1>YouTube</h1>
 <div>Suggested version by ReVanced: <span class="comment">${suggestedYtVersion}</span></div>
 <div>
-    Make sure it's only the apk and <b class="comment" style="text-decoration: underline;">NOT</b> a bundled apk,
-    <br>
-    then click the download button.
+    Make sure it's only the apk and <b class="comment" style="text-decoration: underline;">NOT</b> a bundled/split apk, then click the download button.
 </div>
 <div>
     <a id="youtube-download" class="button large">
