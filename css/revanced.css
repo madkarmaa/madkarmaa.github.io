@@ -122,25 +122,15 @@ a.button[id*="open"] i {
     /* width: calc(100% / 3); */
 }
 
-.app-container>div:has(a.button) {
+.app-container>div:has(.button) {
     display: flex;
     gap: 10px;
     margin-top: 50px;
+    flex-wrap: wrap;
 }
 
 .app-container>.comment {
     display: inline-block;
-}
-
-.app-container div:has(button) {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.app-container div:has(button) * {
-    max-width: max-content;
 }
 
 .app-container #images-container {
