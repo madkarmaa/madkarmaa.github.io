@@ -1,6 +1,5 @@
 <script>
 	import Wave from '$components/Wave.svelte';
-	// import PatchItem from '$components/PatchItem.svelte';
 	import RevancedHome from '$components/revanced/RevancedHome.svelte';
 </script>
 
