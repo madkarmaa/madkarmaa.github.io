@@ -1,8 +1,15 @@
 <script>
 	import Wave from '$components/Wave.svelte';
 	import RevancedHome from '$components/revanced/RevancedHome.svelte';
+	import Meta from '$components/Meta.svelte';
 </script>
 
+<Meta
+	title="madkarmaa.github.io/revanced"
+	description="Troubles with app versions for ReVanced? This is the right place! NOT affiliated with ReVanced or YouTube."
+	url="https://madkarmaa.github.io/revanced"
+	image="https://revanced.app/embed.png"
+/>
 <main>
 	<div class="wrap">
 		<RevancedHome />
