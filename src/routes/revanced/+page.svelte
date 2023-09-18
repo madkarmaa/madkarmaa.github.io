@@ -1,5 +1,5 @@
 <script>
-	import Wave from '$components/Wave.svelte';
+	import Wave from '$components/revanced/Wave.svelte';
 	import RevancedHome from '$components/revanced/RevancedHome.svelte';
 	import Meta from '$components/Meta.svelte';
 </script>
