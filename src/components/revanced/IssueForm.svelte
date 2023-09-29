@@ -23,7 +23,14 @@
 		<label for="description">
 			<h3>Description</h3>
 		</label>
-		<input type="text" id="description" placeholder="Description here..." bind:value={body} />
+		<textarea
+			id="description"
+			cols="30"
+			rows="8"
+			placeholder="Description here..."
+			bind:value={body}
+		/>
+		<!-- <input type="text" id="description" placeholder="Description here..." bind:value={body} /> -->
 	</div>
 	<input type="submit" value="Submit" disabled={!title || !body} />
 </form>
@@ -43,14 +50,20 @@
 		gap: 7px;
 	}
 
-	input[type='text'] {
+	input[type='text'],
+	textarea {
 		background-color: var(--accent-low-opacity);
 		border-top: none;
 		border-left: none;
 		border-bottom: 2px solid var(--accent-color);
 		border-right: 2px solid var(--accent-color);
-		border-radius: 100px;
+		border-radius: 9999999px;
 		padding: 16px 24px;
+	}
+
+	textarea {
+		border-radius: 20px;
+		resize: none !important;
 	}
 
 	::placeholder {

@@ -51,11 +51,7 @@
 			href={manager?.assets[0].browser_download_url}
 			disabled={!manager}
 		>
-			<!-- {#if manager?.assets} -->
 			Download
-			<!-- {:else}
-				<Loading color="var(--grey-eleven)" />
-			{/if} -->
 		</Button>
 		<Button
 			icon="open_in_new"
@@ -94,11 +90,7 @@
 			target="_blank"
 			disabled={!youtubeVerDashed}
 		>
-			<!-- {#if youtubeVerDashed} -->
 			APKMirror
-			<!-- {:else}
-				<Loading color="var(--grey-eleven)" />
-			{/if} -->
 		</Button>
 	</svelte:fragment>
 </AppCard>
@@ -126,11 +118,7 @@
 			href={microg?.assets.find((asset) => /microg.*\.apk/.test(asset.name)).browser_download_url}
 			disabled={!microg}
 		>
-			<!-- {#if microg} -->
 			Download
-			<!-- {:else}
-				<Loading color="var(--grey-eleven)" />
-			{/if} -->
 		</Button>
 		<Button
 			icon="open_in_new"
