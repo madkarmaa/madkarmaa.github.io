@@ -32,7 +32,7 @@
 		<div class="center">
 			<h1>Here's a list of useful guides</h1>
 			<p>
-				To help you using/installing
+				To help you use/install
 				<span style="color: var(--accent-color);">ReVanced</span>
 				apps.
 			</p>
