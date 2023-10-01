@@ -11,6 +11,10 @@
 		<a href="//github.com/ReVanced" target="_blank" rel="noopener noreferrer">ReVanced</a>
 		<span>or</span>
 		<a href="//youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+		<span>| Something's missing?</span>
+		<a href="//madkarmaa.github.io/revanced/report-issue" target="_blank" rel="noopener noreferrer">
+			Submit an issue
+		</a>
 	</div>
 </footer>
 
