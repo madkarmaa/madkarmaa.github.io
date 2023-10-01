@@ -80,7 +80,7 @@
 						<Button
 							type="filled"
 							icon="open_in_new"
-							href="//github.com/ReVanced/revanced-cli/tree/main/docs#-documentation-and-guides-of-revanced-cli"
+							href="//forum.xda-developers.com/t/app-guides-unofficial-revanced-megathread.4523967/#post-87930367"
 							>XDA Forums</Button
 						>
 					</div>
