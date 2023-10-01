@@ -113,6 +113,7 @@
 
 	h3 {
 		margin-bottom: 15px;
+		width: fit-content;
 	}
 
 	h3:hover {
