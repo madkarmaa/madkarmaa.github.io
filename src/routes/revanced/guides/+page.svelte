@@ -80,7 +80,7 @@
 						<Button
 							type="filled"
 							icon="open_in_new"
-							href="//forum.xda-developers.com/t/app-guides-unofficial-revanced-megathread.4523967/#post-87930367"
+							href="//forum.xda-developers.com/t/app-guides-unofficial-revanced-megathread.4523967/#post-87780627"
 							>XDA Forums</Button
 						>
 					</div>
