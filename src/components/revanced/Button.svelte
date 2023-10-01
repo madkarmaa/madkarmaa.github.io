@@ -4,7 +4,7 @@
 	export let type; // 'filled' | 'tonal' | 'text' | 'outlined'
 	export let icon = {}; // type = 'outlined' | 'rounded' | 'sharp', name = see https://fonts.google.com/icons
 	export let href = '';
-	export let target = '';
+	export let target = '_blank';
 	export let disabled = false;
 
 	// default values
