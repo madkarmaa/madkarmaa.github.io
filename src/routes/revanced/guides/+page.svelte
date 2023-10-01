@@ -42,14 +42,12 @@
 				<li>
 					<h3>Patchable apps</h3>
 					<div>
-						<Button type="filled" icon="open_in_new" href="//revanced.app/patches"
-							>List by ReVanced</Button
-						>
+						<Button type="filled" icon="open_in_new" href="//revanced.app/patches">ReVanced</Button>
 						<Button
 							type="filled"
 							icon="open_in_new"
 							href="//sodawithoutsparkles.github.io/revanced-troubleshooting-guide/05-versions/"
-							>List by SodaWithoutSparkles</Button
+							>SodaWithoutSparkles</Button
 						>
 					</div>
 				</li>
@@ -77,13 +75,13 @@
 							type="filled"
 							icon="open_in_new"
 							href="//sodawithoutsparkles.github.io/revanced-troubleshooting-guide/"
-							>SodaWithoutSparkles's guide</Button
+							>SodaWithoutSparkles</Button
 						>
 						<Button
 							type="filled"
 							icon="open_in_new"
 							href="//github.com/ReVanced/revanced-cli/tree/main/docs#-documentation-and-guides-of-revanced-cli"
-							>ReVanced megathread on XDA Forums</Button
+							>XDA Forums</Button
 						>
 					</div>
 				</li>
