@@ -67,11 +67,7 @@
 <!-- YouTube -->
 <AppCard>
 	<svelte:fragment slot="title">
-		<BiColoredHeading>
-			<svelte:fragment slot="left">
-				You<span style="color: var(--accent-color);">Tube</span>
-			</svelte:fragment>
-		</BiColoredHeading>
+		<h1>You<span style="color: var(--accent-color);">Tube</span></h1>
 	</svelte:fragment>
 	<svelte:fragment slot="desc">
 		{#if youtubeVer}
@@ -110,11 +106,7 @@
 <!-- Vanced MicroG -->
 <AppCard>
 	<svelte:fragment slot="title">
-		<BiColoredHeading>
-			<svelte:fragment slot="left">
-				Micro<span style="color: var(--accent-color);">G</span>
-			</svelte:fragment>
-		</BiColoredHeading>
+		<h1>Micro<span style="color: var(--accent-color);">G</span></h1>
 	</svelte:fragment>
 	<svelte:fragment slot="desc">
 		{#if microg}
