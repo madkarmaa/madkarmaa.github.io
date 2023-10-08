@@ -86,7 +86,7 @@
 		<Button
 			icon="open_in_new"
 			type="filled"
-			href={`https://www.apkmirror.com/apk/google-inc/youtube/youtube-${youtubeVerDashed}-release/youtube-${youtubeVerDashed}-android-apk-download/#breadcrumbs`}
+			href={`https://www.apkmirror.com/apk/google-inc/youtube/youtube-${youtubeVerDashed}-release/#downloads`}
 			target="_blank"
 			disabled={!youtubeVerDashed}
 		>
