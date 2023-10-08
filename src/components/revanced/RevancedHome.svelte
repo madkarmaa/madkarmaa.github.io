@@ -7,6 +7,7 @@
 	import { endpoints } from '$lib/dataFetcher';
 	import { getPatchFromPkg, latestPatchAppVersion } from '$lib/versioning';
 	import { onMount } from 'svelte';
+	import moment from 'moment';
 
 	let manager, youtubeVer, youtubeVerDashed, microg;
 
@@ -38,7 +39,7 @@
 				<span style="color: var(--accent-color);">{manager?.metadata.tag_name}</span>
 			</p>
 			<p>
-				Published {new Date(Date.parse(manager?.metadata.published_at)).toLocaleString()}
+				Published {moment(manager?.metadata.published_at).format('lll')}
 			</p>
 		{:else}
 			<Loading color="var(--accent-color)" />
@@ -74,9 +75,19 @@
 	</svelte:fragment>
 	<svelte:fragment slot="desc">
 		{#if youtubeVer}
-			<p>Latest version suggested by ReVanced</p>
-			<p style="color: var(--accent-color);">
-				{youtubeVer}
+			<p>
+				Latest version suggested by ReVanced:
+				<span style="color: var(--accent-color); display: block;">
+					{youtubeVer}
+				</span>
+			</p>
+
+			<p>
+				<b>
+					Make sure to select the
+					<span style="color: var(--accent-color);">nodpi</span>
+					download
+				</b>
 			</p>
 		{:else}
 			<Loading color="var(--accent-color)" />
@@ -108,7 +119,7 @@
 	<svelte:fragment slot="desc">
 		{#if microg}
 			<p>MicroG <span style="color: var(--accent-color);">{microg?.tag_name}</span></p>
-			<p>Published {new Date(Date.parse(microg?.published_at)).toLocaleString()}</p>
+			<p>Published {moment(microg?.published_at).format('lll')}</p>
 		{:else}
 			<Loading color="var(--accent-color)" />
 		{/if}
