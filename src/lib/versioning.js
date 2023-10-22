@@ -1,7 +1,9 @@
 import { compare, coerce } from 'semver';
 
 export function getPatchFromPkg(pkgName, patches) {
-	return patches.find((patch) => patch.compatiblePackages.some((pkg) => pkg.name === pkgName));
+	return patches.find((patch) =>
+		patch.compatiblePackages.some((pkg) => pkg.name === pkgName && !!pkg?.versions)
+	);
 }
 
 export function latestPatchAppVersion(patch, showAll) {
