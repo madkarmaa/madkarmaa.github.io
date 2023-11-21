@@ -17,7 +17,7 @@ export const endpoints = {
 	},
 	github: {
 		microg: {
-			url: 'https://api.github.com/repos/inotia00/VancedMicroG/releases/latest',
+			url: 'https://api.github.com/repos/TeamVanced/VancedMicroG/releases/latest',
 			get: async function () {
 				return await (await fetch(this.url)).json();
 			}

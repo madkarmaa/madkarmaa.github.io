@@ -128,7 +128,7 @@
 		<Button
 			icon="open_in_new"
 			type="tonal"
-			href="//github.com/inotia00/VancedMicroG/releases/latest"
+			href="//github.com/TeamVanced/VancedMicroG/releases/latest"
 			target="_blank"
 		>
 			GitHub
