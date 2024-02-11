@@ -13,7 +13,7 @@ body {
 	background-color: var(--bg-color);
 }
 
-body > div {
+body>div {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
