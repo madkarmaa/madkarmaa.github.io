@@ -12,6 +12,7 @@
 	<!-- Primary Meta Tags -->
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
+
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={url} />
@@ -20,6 +21,7 @@
 	{#if image}
 		<meta property="og:image" content={image} />
 	{/if}
+
 	<!-- Twitter -->
 	<meta property="twitter:url" content={url} />
 	<meta property="twitter:title" content={title} />
