@@ -1,17 +1,10 @@
 <script>
-	// your script goes here
+	import Hero from '../../components/Hero.svelte';
 </script>
 
-<div class="container bgGrid" />
+<main class="flex flex-col">
+	<Hero />
+</main>
 
 <style>
-	.bgGrid {
-		background-size: 40px 40px;
-		background-image: linear-gradient(to right, grey 1px, transparent 1px),
-			linear-gradient(to bottom, grey 1px, transparent 1px);
-	}
-
-	.container {
-		flex: 1;
-	}
 </style>
