@@ -5,7 +5,7 @@
 	let rndNumber;
 
 	onMount(() => {
-		let searchParams = new URLSearchParams(window.location.href);
+		let searchParams = new URLSearchParams(window.location.search);
 		let from = parseInt(searchParams.get('from')) || 0;
 		let to = parseInt(searchParams.get('to')) || 0;
 		rndNumber = getRandomNumber(from, to);
