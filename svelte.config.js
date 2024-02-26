@@ -11,8 +11,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$lib: 'src/lib',
-			$components: 'src/components',
-			$: 'src'
+			$components: 'src/lib/components'
 		},
 		paths: {
 			base: dev ? '' : process.env.BASE_PATH

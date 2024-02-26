@@ -1,6 +1,6 @@
 <script>
-	import './style.css';
-	import Meta from '../components/Meta.svelte';
+	import '../app.css';
+	import Meta from '$components/Meta.svelte';
 </script>
 
 <Meta />

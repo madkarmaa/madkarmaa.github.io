@@ -1,5 +1,5 @@
 <script>
-	import { getRandomNumber } from '../../lib/random.js';
+	import { getRandomNumber } from '$lib/random.js';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
