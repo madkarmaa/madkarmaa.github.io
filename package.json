@@ -24,6 +24,10 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-static": "^3.0.1"
+		"@sveltejs/adapter-static": "^3.0.1",
+		"clsx": "^2.1.0",
+		"svelte-radix": "^1.0.3",
+		"tailwind-merge": "^2.2.1",
+		"tailwind-variants": "^0.2.0"
 	}
 }
