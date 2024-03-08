@@ -1,13 +1,21 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import * as Carousel from "$lib/components/ui/carousel/index.js";
   import * as Card from "$lib/components/ui/card/index.js";
   import { AspectRatio } from "$lib/components/ui/aspect-ratio";
   import { STEPS } from "@/rvSteps";
+
+  let index = 0;
+
+  onMount(() => {
+		let searchParams = new URLSearchParams(window.location.search);
+		index = parseInt(searchParams.get('step') || "1") - 1;
+	});
 </script>
 
 <div class="container flex justify-center items-center h-screen w-full p-10">
 
-  <Carousel.Root class="w-full h-full">
+  <Carousel.Root class="w-full h-full" opts={ { loop: true, startIndex: index } }>
     <Carousel.Content>
 
       {#each Array(STEPS.length) as _, i (i)}
