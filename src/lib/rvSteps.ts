@@ -8,26 +8,26 @@ export const STEPS: Step[] = [
     {
         title: 'balls',
         description: 'guh',
-        image_path: 'https://picsum.photos/1920/1080',
+        image_path: 'https://picsum.photos/3840/2160',
     },
     {
         title: 'balls',
         description: 'guh',
-        image_path: 'https://picsum.photos/1920/1080',
+        image_path: 'https://picsum.photos/3840/2160',
     },
     {
         title: 'balls',
         description: 'guh',
-        image_path: 'https://picsum.photos/1920/1080',
+        image_path: 'https://picsum.photos/3840/2160',
     },
     {
         title: 'balls',
         description: 'guh',
-        image_path: 'https://picsum.photos/1920/1080',
+        image_path: 'https://picsum.photos/3840/2160',
     },
     {
         title: 'balls',
         description: 'guh',
-        image_path: 'https://picsum.photos/1920/1080',
+        image_path: 'https://picsum.photos/3840/2160',
     },
 ];
