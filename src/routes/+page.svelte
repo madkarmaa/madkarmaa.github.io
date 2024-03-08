@@ -10,12 +10,15 @@
   onMount(() => {
 		let searchParams = new URLSearchParams(window.location.search);
 		index = parseInt(searchParams.get('step') || "1") - 1;
+
+    if (index < 0) index = 0;
+    else if (index > STEPS.length) index = STEPS.length - 1;
 	});
 </script>
 
 <div class="container flex justify-center items-center h-screen w-full p-10">
 
-  <Carousel.Root class="w-full h-full" opts={ { loop: true, startIndex: index } }>
+  <Carousel.Root class="w-full h-full" opts={ { startIndex: index } }>
     <Carousel.Content>
 
       {#each Array(STEPS.length) as _, i (i)}
