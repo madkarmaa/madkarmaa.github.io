@@ -16,25 +16,25 @@
 	});
 </script>
 
-<div class="container flex justify-center items-center h-screen w-full p-10">
+<main class="h-full min-h-screen w-full flex flex-col justify-center items-center">
 
-  <Carousel.Root class="w-full h-full" opts={ { startIndex: index } }>
+  <Carousel.Root class="p-10 h-full min-h-full w-10/12" opts={ { startIndex: index } }>
     <Carousel.Content>
 
       {#each Array(STEPS.length) as _, i (i)}
         <Carousel.Item>
 
-          <Card.Root class="w-full h-full">
+          <Card.Root>
 
             <Card.Header>
-              <Card.Title>{STEPS[i].title}</Card.Title>
+              <Card.Title class="text-primary text-xl font-bold">{STEPS[i].title}</Card.Title>
               <Card.Description>{STEPS[i].description}</Card.Description>
             </Card.Header>
 
             {#if STEPS[i].image_path}
               <Card.Content class="grid gap-4">
-                <AspectRatio ratio={16 / 9} class="bg-muted">
-                  <img src={STEPS[i].image_path} alt={STEPS[i].title} class="rounded-md">
+                <AspectRatio ratio={9 / 16} class="bg-transparent">
+                  <img src={STEPS[i].image_path} alt={STEPS[i].title} class="w-full h-full rounded-md">
                 </AspectRatio>
               </Card.Content>
             {/if}
@@ -54,4 +54,4 @@
 
   </Carousel.Root>
 
-</div>
+</main>
