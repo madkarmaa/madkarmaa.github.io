@@ -52,7 +52,7 @@
               {/if}
 
               <Card.Footer class="px-4 py-2 flex items-center justify-end">
-                <Button on:click={() => { copyToClipboard(window.location.origin + window.location.pathname + '?step=' + (i + 1)) }}>
+                <Button on:click={() => copyToClipboard(window.location.origin + window.location.pathname + '?step=' + (i + 1)) }>
                   <FAIcon iconName="link-simple" type={FAIconType.REGULAR}></FAIcon>
                   Step {i + 1}
                 </Button>
