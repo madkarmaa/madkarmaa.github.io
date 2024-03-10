@@ -26,7 +26,7 @@
 <main class="flex min-h-screen justify-center items-center">
   <div class="container mx-auto px-4 py-8 flex flex-col items-center">
 
-    <Carousel.Root class="w-full max-w-3xl rounded-lg" opts={ { startIndex: index } } >
+    <Carousel.Root class="w-full max-w-3xl rounded-lg overflow-hidden md:overflow-visible" opts={ { startIndex: index } } >
       <Carousel.Content>
 
         {#each Array(STEPS.length) as _, i (i)}
