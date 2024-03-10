@@ -6,10 +6,10 @@
   import { AspectRatio } from "$lib/components/ui/aspect-ratio";
   import { Separator } from "$lib/components/ui/separator";
   import { Button } from "$lib/components/ui/button";
-  import FaIcon from '@/components/FaIcon.svelte';
+  import FAIcon from '@/components/FAIcon.svelte';
 
   import { STEPS } from "@/rvSteps";
-  import { FaIconType } from '@/types';
+  import { FAIconType } from '@/types';
   import { copyToClipboard } from '@/utils';
 
   let index = 0;
@@ -23,7 +23,7 @@
   });
 </script>
 
-<main class="flex min-h-screen">
+<main class="flex min-h-screen justify-center items-center">
   <div class="container mx-auto px-4 py-8 flex flex-col items-center">
 
     <Carousel.Root class="w-full max-w-3xl rounded-lg" opts={ { startIndex: index } } >
@@ -53,7 +53,7 @@
 
               <Card.Footer class="px-4 py-2 flex items-center justify-end">
                 <Button on:click={() => { copyToClipboard(window.location.origin + window.location.pathname + '?step=' + (i + 1)) }}>
-                  <FaIcon iconName="link-simple" type={FaIconType.REGULAR}></FaIcon>
+                  <FAIcon iconName="link-simple" type={FAIconType.REGULAR}></FAIcon>
                   Step {i + 1}
                 </Button>
               </Card.Footer>

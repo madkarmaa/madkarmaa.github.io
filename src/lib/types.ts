@@ -1,4 +1,4 @@
-export enum FaIconType {
+export enum FAIconType {
     SOLID = 'solid',
     REGULAR = 'regular',
     LIGHT = 'light',
