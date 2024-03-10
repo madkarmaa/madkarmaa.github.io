@@ -29,24 +29,24 @@
     <Carousel.Root class="w-full max-w-3xl rounded-lg overflow-hidden md:overflow-visible" opts={ { startIndex: index } } >
       <Carousel.Content>
 
-        {#each Array(STEPS.length) as _, i (i)}
+        {#each STEPS as step, i (i)}
           <Carousel.Item class="flex flex-col space-y-4">
 
             <Card.Root class="flex-grow rounded-lg">
 
               <Card.Header class="p-4">
-                <Card.Title class="text-xl font-bold text-primary">{STEPS[i].title}</Card.Title>
-                <Card.Description>{@html STEPS[i].description}</Card.Description>
+                <Card.Title class="text-xl font-bold text-primary">{step.title}</Card.Title>
+                <Card.Description>{@html step.description}</Card.Description>
 
-                {#if STEPS[i].image_path}
+                {#if step.image_path}
                   <Separator class="bg-primary" />
                 {/if}
               </Card.Header>
 
-              {#if STEPS[i].image_path}
+              {#if step.image_path}
                 <Card.Content class="flex-grow overflow-hidden">
                   <AspectRatio ratio={9 / 16} class="w-full rounded-t-lg bg-transparent">
-                    <img src={STEPS[i].image_path} alt={STEPS[i].title} class="object-cover w-full h-full">
+                    <img src={step.image_path} alt={step.title} class="object-cover w-full h-full">
                   </AspectRatio>
                 </Card.Content>
               {/if}
