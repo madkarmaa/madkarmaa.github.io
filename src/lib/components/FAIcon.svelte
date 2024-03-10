@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { FAIconType } from "@/types";
+    import { FAIconType } from '@/types';
 
     export let iconName: string;
     export let sharp: boolean = false;
