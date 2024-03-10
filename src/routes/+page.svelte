@@ -5,8 +5,12 @@
   import * as Card from "$lib/components/ui/card/index.js";
   import { AspectRatio } from "$lib/components/ui/aspect-ratio";
   import { Separator } from "$lib/components/ui/separator";
+  import { Button } from "$lib/components/ui/button";
+  import FaIcon from '@/components/FaIcon.svelte';
 
   import { STEPS } from "@/rvSteps";
+  import { FaIconType } from '@/types';
+  import { copyToClipboard } from '@/utils';
 
   let index = 0;
 
@@ -32,7 +36,7 @@
 
               <Card.Header class="p-4">
                 <Card.Title class="text-xl font-bold text-primary">{STEPS[i].title}</Card.Title>
-                <Card.Description>{STEPS[i].description}</Card.Description>
+                <Card.Description>{@html STEPS[i].description}</Card.Description>
 
                 {#if STEPS[i].image_path}
                   <Separator class="bg-primary" />
@@ -48,7 +52,10 @@
               {/if}
 
               <Card.Footer class="px-4 py-2 flex items-center justify-end">
-                <small>Step {i + 1}</small>
+                <Button on:click={() => { copyToClipboard(window.location.origin + window.location.pathname + '?step=' + (i + 1)) }}>
+                  <FaIcon iconName="link-simple" type={FaIconType.REGULAR}></FaIcon>
+                  Step {i + 1}
+                </Button>
               </Card.Footer>
             </Card.Root>
 

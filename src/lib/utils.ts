@@ -54,3 +54,7 @@ export const flyAndScale = (
         easing: cubicOut,
     };
 };
+
+export const copyToClipboard = async (x: string) => {
+    await window.navigator.clipboard.writeText(x);
+};
