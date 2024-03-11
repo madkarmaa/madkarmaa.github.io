@@ -44,43 +44,41 @@
     });
 </script>
 
-<main class="flex min-h-screen justify-center items-center">
-    <div class="container mx-auto px-4 py-8 flex flex-col items-center">
-        <Carousel.Root class="w-full max-w-3xl rounded-lg overflow-hidden md:overflow-visible" bind:api>
-            <Carousel.Content>
-                {#each STEPS as step, i (i)}
-                    <Carousel.Item class="flex flex-col space-y-4">
-                        <Card.Root class="flex-grow rounded-lg">
-                            <Card.Header class="p-4">
-                                <Card.Title class="text-xl font-bold text-primary">{step.title}</Card.Title>
-                                <Card.Description>{@html step.description}</Card.Description>
+<main class="min-h-screen p-10 flex justify-center items-center flex-col">
+    <Progress {value} class="rounded-none fixed top-0 left-0" />
 
-                                {#if step.image_path}
-                                    <Separator class="bg-primary" />
-                                {/if}
-                            </Card.Header>
+    <Carousel.Root class="w-full max-w-3xl rounded-lg overflow-hidden md:overflow-visible" bind:api>
+        <Carousel.Content>
+            {#each STEPS as step, i (i)}
+                <Carousel.Item class="flex flex-col space-y-4">
+                    <Card.Root class="flex-grow rounded-lg">
+                        <Card.Header class="p-4">
+                            <Card.Title class="text-xl font-bold text-primary">{step.title}</Card.Title>
+                            <Card.Description>{@html step.description}</Card.Description>
 
                             {#if step.image_path}
-                                <Card.Content class="flex-grow overflow-hidden">
-                                    <img src={step.image_path} alt={step.title} class="object-cover w-full h-full" />
-                                </Card.Content>
+                                <Separator class="bg-primary" />
                             {/if}
+                        </Card.Header>
 
-                            <Card.Footer class="px-4 py-2 flex items-center justify-end">
-                                <Button on:click={() => share(i + 1)}>
-                                    <FAIcon iconName="link-simple" type={FAIconType.REGULAR}></FAIcon>
-                                    Step {i + 1}
-                                </Button>
-                            </Card.Footer>
-                        </Card.Root>
-                    </Carousel.Item>
-                {/each}
-            </Carousel.Content>
+                        {#if step.image_path}
+                            <Card.Content class="flex-grow overflow-hidden">
+                                <img src={step.image_path} alt={step.title} class="object-cover w-full h-full" />
+                            </Card.Content>
+                        {/if}
 
-            <Carousel.Previous class="size-10 hover:bg-primary" />
-            <Carousel.Next class="size-10 hover:bg-primary" />
-        </Carousel.Root>
+                        <Card.Footer class="px-4 py-2 flex items-center justify-end">
+                            <Button on:click={() => share(i + 1)}>
+                                <FAIcon iconName="link-simple" type={FAIconType.REGULAR}></FAIcon>
+                                Step {i + 1}
+                            </Button>
+                        </Card.Footer>
+                    </Card.Root>
+                </Carousel.Item>
+            {/each}
+        </Carousel.Content>
 
-        <Progress {value} />
-    </div>
+        <Carousel.Previous class="size-10 hover:bg-primary" />
+        <Carousel.Next class="size-10 hover:bg-primary" />
+    </Carousel.Root>
 </main>
