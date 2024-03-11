@@ -25,7 +25,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-static": "^3.0.1",
-		"bits-ui": "^0.19.5",
+		"bits-ui": "^0.19.6",
 		"clsx": "^2.1.0",
 		"embla-carousel-svelte": "^8.0.0",
 		"svelte-radix": "^1.0.3",
