@@ -6,9 +6,9 @@ interface Step {
 
 export const STEPS: Step[] = [
     {
-        title: 'Download the manager',
+        title: 'Download the ReVanced Manager',
         description:
-            'Go to <a href="https://revanced.app/download" target="_blank">the official website</a>, download and install the ReVanced Manager.',
+            'Go to <a href="https://revanced.app/download" target="_blank">the official website</a>, download and install the <b>ReVanced Manager</b>.',
     },
     {
         title: 'BE AWARE!!!',
