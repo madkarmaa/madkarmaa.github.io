@@ -1,8 +1,4 @@
-interface Step {
-    title: string;
-    description: string;
-    image_path?: string;
-}
+import { type Step } from '@/types';
 
 export const STEPS: Step[] = [
     {

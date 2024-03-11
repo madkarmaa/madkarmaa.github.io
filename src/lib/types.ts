@@ -5,3 +5,9 @@ export enum FAIconType {
     DUOTONE = 'duotone',
     THIN = 'thin',
 }
+
+export interface Step {
+    title: string;
+    description: string;
+    image_path?: string;
+}
