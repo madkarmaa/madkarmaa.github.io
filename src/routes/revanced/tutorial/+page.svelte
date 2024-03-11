@@ -11,12 +11,10 @@
 
     import { STEPS } from '@/rvTutorialSteps';
     import { FAIconType } from '@/types';
-    import { copyToClipboard } from '@/utils';
+    import { copyToClipboard, getPercentage } from '@/utils';
 
     const share = (step: number) =>
         copyToClipboard(`${window.location.origin}${window.location.pathname}?step=${step}`);
-
-    const getPercentage = (max: number, step: number) => (100 * step) / max;
 
     let value: number = 0;
     let api: CarouselAPI;

@@ -58,3 +58,5 @@ export const flyAndScale = (
 export const copyToClipboard = async (x: string) => {
     await window.navigator.clipboard.writeText(x);
 };
+
+export const getPercentage = (max: number, step: number) => (100 * step) / max;
