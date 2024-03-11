@@ -53,8 +53,8 @@
                 <Carousel.Item class="flex flex-col space-y-4">
                     <Card.Root class="flex-grow rounded-lg">
                         <Card.Header class="p-4">
-                            <Card.Title class="text-xl font-bold text-primary">{step.title}</Card.Title>
-                            <Card.Description>{@html step.description}</Card.Description>
+                            <Card.Title class="font-bold text-primary text-2xl">{step.title}</Card.Title>
+                            <Card.Description class="text-base">{@html step.description}</Card.Description>
 
                             {#if step.image_path}
                                 <Separator class="bg-primary" />
