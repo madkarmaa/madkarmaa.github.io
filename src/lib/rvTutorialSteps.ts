@@ -25,14 +25,14 @@ export const STEPS: Step[] = [
             "After you've found the app you want to patch, click on the button that says <b>Suggested</b> and open the first search result from the website <b>APKMirror</b>.",
     },
     {
-        title: 'Download the apk of the app',
+        title: 'Download the APK of the app',
         description:
             'Make sure the title of the app states <b>nodpi</b>, then click on the <b>Download APK</b> button.',
     },
     {
-        title: 'Select the apk in the manager',
+        title: 'Select the APK in the manager',
         description:
-            'Go back to the <b>ReVanced Manager > Patcher > Select an app > Storage</b> (the button in the lower right corner).',
+            'Go back to the <b>ReVanced Manager > Patcher > Select an app > Storage</b> (the button in the lower right corner), then search for the file you just downloaded.',
     },
     {
         title: 'Select the default set of patches',
