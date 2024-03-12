@@ -51,7 +51,7 @@
         <Carousel.Content>
             {#each STEPS as step, i (i)}
                 <Carousel.Item class="flex flex-col space-y-4">
-                    <Card.Root class="flex-grow rounded-lg">
+                    <Card.Root class="rounded-lg">
                         <Card.Header class="p-4">
                             <Card.Title class="font-bold text-primary text-2xl">{step.title}</Card.Title>
                             <Card.Description class="text-base">{@html step.description}</Card.Description>
@@ -60,7 +60,7 @@
                         {#if step.media_path}
                             <Separator class="bg-primary" />
 
-                            <Card.Content class="flex-grow overflow-hidden">
+                            <Card.Content class="overflow-hidden">
                                 {#if step.media_path.endsWith('.mp4')}
                                     <!-- svelte-ignore a11y-media-has-caption -->
                                     <video src={step.media_path} class="object-cover w-full h-full" autoplay muted loop controls={false}></video>
