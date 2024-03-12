@@ -45,7 +45,7 @@
 </script>
 
 <main class="min-h-screen p-10 flex justify-center items-center flex-col">
-    <Progress {value} class="rounded-none fixed top-0 left-0" />
+    <Progress {value} class="rounded-none fixed top-0 left-0 z-50" />
 
     <Carousel.Root class="w-full max-w-3xl rounded-lg overflow-hidden md:overflow-visible" bind:api>
         <Carousel.Content>
@@ -55,17 +55,15 @@
                         <Card.Header class="p-4">
                             <Card.Title class="font-bold text-primary text-2xl">{step.title}</Card.Title>
                             <Card.Description class="text-base">{@html step.description}</Card.Description>
-
-                            {#if step.media_path}
-                                <Separator class="bg-primary" />
-                            {/if}
                         </Card.Header>
 
                         {#if step.media_path}
+                            <Separator class="bg-primary" />
+
                             <Card.Content class="flex-grow overflow-hidden">
                                 {#if step.media_path.endsWith('.mp4')}
                                     <!-- svelte-ignore a11y-media-has-caption -->
-                                    <video src={step.media_path}></video>
+                                    <video src={step.media_path} class="object-cover w-full h-full" autoplay muted loop controls={false}></video>
                                 {:else}
                                     <img src={step.media_path} alt={step.title} class="object-cover w-full h-full" />
                                 {/if}
