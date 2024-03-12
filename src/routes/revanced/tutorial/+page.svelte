@@ -56,14 +56,14 @@
                             <Card.Title class="font-bold text-primary text-2xl">{step.title}</Card.Title>
                             <Card.Description class="text-base">{@html step.description}</Card.Description>
 
-                            {#if step.image_path}
+                            {#if step.media_path}
                                 <Separator class="bg-primary" />
                             {/if}
                         </Card.Header>
 
-                        {#if step.image_path}
+                        {#if step.media_path}
                             <Card.Content class="flex-grow overflow-hidden">
-                                <img src={step.image_path} alt={step.title} class="object-cover w-full h-full" />
+                                <img src={step.media_path} alt={step.title} class="object-cover w-full h-full" />
                             </Card.Content>
                         {/if}
 

@@ -9,5 +9,5 @@ export enum FAIconType {
 export interface Step {
     title: string;
     description: string;
-    image_path?: string;
+    media_path?: string;
 }
