@@ -47,7 +47,7 @@
 <main class="min-h-screen p-4 md:p-10 flex justify-center items-center flex-col">
     <Progress {value} class="rounded-none fixed top-0 left-0 z-50" />
 
-    <Carousel.Root class="w-full max-w-3xl rounded-lg overflow-hidden md:overflow-visible" bind:api>
+    <Carousel.Root class="w-full max-w-3xl rounded-lg" bind:api>
         <Carousel.Content>
             {#each STEPS as step, i (i)}
                 <Carousel.Item class="flex flex-col space-y-4">
@@ -60,12 +60,23 @@
                         {#if step.media_path}
                             <Separator class="bg-primary" />
 
-                            <Card.Content class="overflow-hidden pt-6">
+                            <Card.Content class="overflow-hidden pt-6 flex justify-center items-center">
                                 {#if step.media_path.endsWith('.mp4')}
                                     <!-- svelte-ignore a11y-media-has-caption -->
-                                    <video src={step.media_path} class="object-cover w-full h-full" autoplay muted loop controls={false}></video>
+                                    <video
+                                        src={step.media_path}
+                                        class="object-cover w-full h-full md:h-auto md:max-w-xs"
+                                        autoplay
+                                        muted
+                                        loop
+                                        controls={false}
+                                    ></video>
                                 {:else}
-                                    <img src={step.media_path} alt={step.title} class="object-cover w-full h-full" />
+                                    <img
+                                        src={step.media_path}
+                                        alt={step.title}
+                                        class="object-cover w-full h-full md:h-auto md:max-w-xs"
+                                    />
                                 {/if}
                             </Card.Content>
                         {/if}
@@ -81,7 +92,7 @@
             {/each}
         </Carousel.Content>
 
-        <Carousel.Previous class="size-10 hover:bg-primary" />
-        <Carousel.Next class="size-10 hover:bg-primary" />
+        <Carousel.Previous class="size-14 hover:bg-primary max-sm:fixed max-sm:bottom-0 max-sm:left-0 z-50" />
+        <Carousel.Next class="size-14 hover:bg-primary max-sm:fixed max-sm:bottom-0 max-sm:right-0 z-50" />
     </Carousel.Root>
 </main>
