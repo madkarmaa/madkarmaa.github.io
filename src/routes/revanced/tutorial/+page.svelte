@@ -63,7 +63,12 @@
 
                         {#if step.media_path}
                             <Card.Content class="flex-grow overflow-hidden">
-                                <img src={step.media_path} alt={step.title} class="object-cover w-full h-full" />
+                                {#if step.media_path.endsWith('.mp4')}
+                                    <!-- svelte-ignore a11y-media-has-caption -->
+                                    <video src={step.media_path}></video>
+                                {:else}
+                                    <img src={step.media_path} alt={step.title} class="object-cover w-full h-full" />
+                                {/if}
                             </Card.Content>
                         {/if}
 
