@@ -60,7 +60,7 @@
                         {#if step.media_path}
                             <Separator class="bg-primary" />
 
-                            <Card.Content class="overflow-hidden">
+                            <Card.Content class="overflow-hidden pt-6">
                                 {#if step.media_path.endsWith('.mp4')}
                                     <!-- svelte-ignore a11y-media-has-caption -->
                                     <video src={step.media_path} class="object-cover w-full h-full" autoplay muted loop controls={false}></video>
