@@ -65,7 +65,7 @@
                                     <!-- svelte-ignore a11y-media-has-caption -->
                                     <video
                                         src={step.media_path}
-                                        class="object-cover w-full h-full md:h-auto md:max-w-xs"
+                                        class="object-cover w-full h-full md:h-auto md:max-w-xs rounded-md"
                                         autoplay
                                         muted
                                         loop
@@ -75,7 +75,7 @@
                                     <img
                                         src={step.media_path}
                                         alt={step.title}
-                                        class="object-cover w-full h-full md:h-auto md:max-w-xs"
+                                        class="object-cover w-full h-full md:h-auto md:max-w-xs rounded-md"
                                     />
                                 {/if}
                             </Card.Content>
@@ -92,7 +92,7 @@
             {/each}
         </Carousel.Content>
 
-        <Carousel.Previous class="size-14 hover:bg-primary max-sm:fixed max-sm:bottom-0 max-sm:left-0 z-50" />
-        <Carousel.Next class="size-14 hover:bg-primary max-sm:fixed max-sm:bottom-0 max-sm:right-0 z-50" />
+        <Carousel.Previous class="size-12 max-sm:fixed max-sm:bottom-0 max-sm:left-0 z-50" />
+        <Carousel.Next class="size-12 max-sm:fixed max-sm:bottom-0 max-sm:right-0 z-50" />
     </Carousel.Root>
 </main>
