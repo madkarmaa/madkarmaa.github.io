@@ -16,6 +16,8 @@
     const share = (step: number) =>
         copyToClipboard(`${window.location.origin}${window.location.pathname}?step=${step}`);
 
+    const edit = () => window.open('https://github.com/madkarmaa/madkarmaa.github.io/edit/master/src/lib/rvTutorialSteps.ts', '_blank');
+
     let value: number = 0;
     let api: CarouselAPI;
     let count: number = 0;
@@ -81,7 +83,12 @@
                             </Card.Content>
                         {/if}
 
-                        <Card.Footer class="px-4 py-2 flex items-center justify-end">
+                        <Card.Footer class="px-4 py-2 flex items-center justify-end gap-2">
+                            <Button on:click={edit}>
+                                <FAIcon iconName="pen-to-square" type={FAIconType.REGULAR}></FAIcon>
+                                Edit this page
+                            </Button>
+
                             <Button on:click={() => share(i + 1)}>
                                 <FAIcon iconName="link-simple" type={FAIconType.REGULAR}></FAIcon>
                                 Step {i + 1}
