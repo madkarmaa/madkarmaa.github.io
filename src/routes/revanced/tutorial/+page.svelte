@@ -92,7 +92,7 @@
             {/each}
         </Carousel.Content>
 
-        <Carousel.Previous class="size-12 max-sm:fixed max-sm:bottom-0 max-sm:left-0 z-50" />
-        <Carousel.Next class="size-12 max-sm:fixed max-sm:bottom-0 max-sm:right-0 z-50" />
+        <Carousel.Previous class="size-12 max-sm:fixed max-sm:!bottom-0 max-sm:!left-1/3 z-50" />
+        <Carousel.Next class="size-12 max-sm:fixed max-sm:!bottom-0 max-sm:!right-1/3 z-50" />
     </Carousel.Root>
 </main>
