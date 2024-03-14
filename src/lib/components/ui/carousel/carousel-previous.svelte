@@ -21,8 +21,8 @@
     class={cn(
         'absolute h-8 w-8 touch-manipulation rounded-full',
         $orientation === 'horizontal'
-            ? '-left-12 md:top-1/2 -translate-y-1/2'
-            : '-top-12 md:left-1/2 -translate-x-1/2 rotate-90',
+            ? '-left-16 md:top-1/2 -translate-y-1/2'
+            : '-top-16 md:left-1/2 -translate-x-1/2 rotate-90',
         className
     )}
     disabled={!$canScrollPrev}
