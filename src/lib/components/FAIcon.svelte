@@ -6,4 +6,4 @@
     export let type: FAIconType = FAIconType.SOLID;
 </script>
 
-<i class="mr-2 mt-[0.2rem] h-4 w-4 fa-{iconName} fa-{type} {sharp ? 'fa-sharp' : ''}"></i>
+<i class="mr-2 h-4 w-4 fa-{iconName} fa-{type} {sharp ? 'fa-sharp' : ''} flex justify-center items-center"></i>
