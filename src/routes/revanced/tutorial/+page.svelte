@@ -45,7 +45,7 @@
 </script>
 
 <main class="min-h-screen p-4 md:p-10 flex justify-center items-center flex-col">
-    <Progress {value} class="rounded-none fixed top-0 left-0 z-50" />
+    <Progress {value} class="rounded-none fixed bottom-0 left-0 z-50" />
 
     <Carousel.Root class="w-full max-w-3xl rounded-lg" bind:api>
         <Carousel.Content>
