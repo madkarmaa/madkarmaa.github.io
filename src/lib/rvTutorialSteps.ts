@@ -60,6 +60,6 @@ export const STEPS: Step[] = [
     },
     {
         title: "Still can't understand?",
-        description: 'Watch a video tutorial <a href="#" target="_blank">here</a>.',
+        description: 'Watch a video tutorial <a href="/revanced/full_tutorial.mp4" target="_blank">here</a>.',
     },
 ];
