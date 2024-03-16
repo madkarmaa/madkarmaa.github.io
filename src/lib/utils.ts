@@ -76,3 +76,11 @@ export const isMobile = () => {
     })(navigator.userAgent);
     return check;
 };
+
+export const toCamelCase = (str: string) =>
+    str
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+
+export const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
