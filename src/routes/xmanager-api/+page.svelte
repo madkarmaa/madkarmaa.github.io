@@ -9,6 +9,8 @@
     import FAIcon from '@/components/FAIcon.svelte';
 
     let res: Response | any;
+    let err: Error | unknown;
+
     const versions: { [key: string]: XManagerAPKVersion[] } = {
         Stock_Patched: [],
         Amoled_Patched: [],
@@ -17,15 +19,24 @@
     };
 
     onMount(async () => {
-        res = await (await fetch(XMANAGER_API_URL)).json();
-        versions.Stock_Patched = Array.from(res['Stock_Patched']);
-        versions.Amoled_Patched = Array.from(res['Amoled_Patched']);
-        versions.Stock_Cloned_Patched = Array.from(res['Stock_Cloned_Patched']);
-        versions.Amoled_Cloned_Patched = Array.from(res['Amoled_Cloned_Patched']);
+        try {
+            res = await (await fetch(XMANAGER_API_URL)).json();
+            versions.Stock_Patched = Array.from(res['Stock_Patched']);
+            versions.Amoled_Patched = Array.from(res['Amoled_Patched']);
+            versions.Stock_Cloned_Patched = Array.from(res['Stock_Cloned_Patched']);
+            versions.Amoled_Cloned_Patched = Array.from(res['Amoled_Cloned_Patched']);
+        } catch (e) {
+            err = e;
+        }
     });
 </script>
 
-{#if res && Object.values(versions).every((v) => v.length !== 0)}
+{#if err}
+    <div>
+        <h1>Something went wrong...</h1>
+        <code>{err}</code>
+    </div>
+{:else if res && Object.values(versions).every((v) => v.length !== 0)}
     {#each Object.entries(versions) as [versionType, versionsList]}
         <h2>{capitalize(versionType.replaceAll('_', ' '))}</h2>
         <ul>
