@@ -45,6 +45,12 @@
 </script>
 
 <main class="min-h-screen p-4 md:p-10 flex flex-col gap-4">
+    <h1 class="text-center text-3xl font-bold text-primary">XManager Spotify APKs</h1>
+    <p class="text-center mb-4">
+        Download the Spotify APKs the <a href="https://xmanagerapp.com" target="_blank">XManager app</a> offers without the
+        need to install their app by using their own API
+    </p>
+
     {#if err}
         <div>
             <h1>Something went wrong...</h1>
@@ -54,7 +60,7 @@
         {#each Object.entries(versions) as [versionType, versionsList]}
             <Collapsible.Root class="space-y-2">
                 <Collapsible.Trigger>
-                    <Button variant="ghost" class="text-2xl font-bold">
+                    <Button variant="ghost" class="text-xl font-semibold">
                         <FAIcon iconName="sort" type={FAIconType.LIGHT}></FAIcon>
                         {capitalize(versionType.replaceAll('_', ' '))}
                     </Button>
