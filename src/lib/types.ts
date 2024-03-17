@@ -17,4 +17,5 @@ export interface XManagerAPKVersion {
     Link_2: string;
     Mirror: string;
     Title: string;
+    isLatest: boolean;
 }
