@@ -37,6 +37,13 @@
     onMount(() => {
         searchParams = new URLSearchParams(window.location.search);
 
+        window.addEventListener('keydown', (e) => {
+            if (!api) return;
+
+            if (e.key === 'ArrowRight') api.scrollNext();
+            else if (e.key === 'ArrowLeft') api.scrollPrev();
+        });
+
         current = parseInt(searchParams.get('step') || '1');
 
         if (current < 0) current = 0;
