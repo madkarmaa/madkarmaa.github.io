@@ -48,7 +48,7 @@
     <h1 class="text-center text-3xl font-bold text-primary">XManager Spotify APKs</h1>
     <p class="text-center mb-4">
         Download the Spotify APKs the <a href="https://xmanagerapp.com" target="_blank">XManager app</a> offers without the
-        need to install their app by using their own API
+        need to install their manager by using their own API
     </p>
 
     {#if err}
