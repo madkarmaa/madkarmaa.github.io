@@ -13,7 +13,7 @@
     onMount(async () => {
         try {
             // TODO: change later to hosted API
-            PROFILE_DATA = await (await fetch('http://localhost:6969/discord/user/' + userId)).json();
+            PROFILE_DATA = await (await fetch('http://localhost:6969/discord/users/' + userId)).json();
             console.log(PROFILE_DATA);
         } catch (error) {
             console.error(error);
