@@ -1,0 +1,9 @@
+$adbExists = Get-Command adb.exe -ErrorAction SilentlyContinue
+if ($null -eq $adbExists) {
+    Write-Host "Error: ADB is not found. Please ensure it is installed and available in the PATH.`nDownload it here: https://developer.android.com/tools/releases/platform-tools#downloads"
+    exit 1
+}
+& adb.exe devices
+Clear-Host
+Write-Host "ANDROID CLEANER`n"
+& adb.exe shell "for p in `$(pm list packages -3 | cut -f2 -d`":`"); do am force-stop `$p && echo `"> Stopped `$p`"; done && pm trim-caches 999999999999 && echo `"> Cleared cache`""
