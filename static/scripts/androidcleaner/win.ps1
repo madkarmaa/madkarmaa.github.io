@@ -11,6 +11,4 @@ Write-Host
 Write-Host "This script will force stop all the non-system apps on your Android phone, then clear the system cache."
 Write-Host "Remember to re-open the apps you want to receive notifications from."
 Write-Host
-& adb.exe shell "for p in `$(pm list packages -3 | cut -f2 -d`":`"); do am force-stop `$p && echo `"Stopped `$p`"; done && pm trim-caches 999999999999"
-Write-Host
-Write-Host "Cleared cache"
+& adb.exe shell "for p in `$(pm list packages -3 | cut -f2 -d`":`"); do am force-stop `$p && echo `"Stopped `$p`"; done && pm trim-caches 999999999999 && echo `"Cleared cache`""
