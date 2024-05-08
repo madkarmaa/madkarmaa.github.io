@@ -6,4 +6,4 @@ if ($null -eq $adbExists) {
 & adb.exe devices
 Clear-Host
 Write-Host "ANDROID CLEANER`n"
-& adb.exe shell "for p in `$(pm list packages -3 | cut -f2 -d`":`"); do am force-stop `$p && echo `"> Stopped `$p`"; done && pm trim-caches 999999999999 && echo `"> Cleared cache`""
+& adb.exe shell "for p in `$(pm list packages -3 | cut -f2 -d`":`"); do am force-stop `$p && echo `"Stopped `$p`"; done && pm trim-caches 999999999999 && echo `"\nCleared cache`""
