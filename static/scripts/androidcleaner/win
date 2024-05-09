@@ -6,6 +6,7 @@ if ($null -eq $adbExists) {
     Invoke-WebRequest "https://dl.google.com/android/repository/platform-tools-latest-windows.zip" -OutFile $adbZipPath
     Write-Host "Downloaded. Unzipping..."
     Expand-Archive $adbZipPath -DestinationPath $env:APPDATA -Force
+    Remove-Item $adbZipPath -Force
     Write-Host "Unzipped. Setting environment variable..."
     [Environment]::SetEnvironmentVariable("Path", $env:Path + ";" + $env:APPDATA + "\platform-tools", "User")
     Write-Host "Environment variable set. Please open a new terminal and run the command again."
