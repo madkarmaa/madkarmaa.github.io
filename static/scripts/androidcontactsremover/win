@@ -1,0 +1,52 @@
+$adbExists = Get-Command adb.exe -ErrorAction SilentlyContinue
+if ($null -eq $adbExists) {
+    Write-Host "Error: ADB not found. Downloading..."
+    $ProgressPreference = 'SilentlyContinue'
+    $adbZipPath = $env:APPDATA + "\adb.zip"
+    Invoke-WebRequest "https://dl.google.com/android/repository/platform-tools-latest-windows.zip" -OutFile $adbZipPath
+    Write-Host "Downloaded. Unzipping..."
+    Expand-Archive $adbZipPath -DestinationPath $env:APPDATA -Force
+    Remove-Item $adbZipPath -Force
+    Write-Host "Unzipped. Setting environment variable..."
+    [Environment]::SetEnvironmentVariable("Path", $env:Path + ";" + $env:APPDATA + "\platform-tools", "User")
+    Write-Host "Environment variable set. Please open a new terminal and run the command again."
+    $ProgressPreference = 'Continue'
+    Write-Host
+    Write-Host -NoNewLine 'Press any key to exit...';
+    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+    exit 0
+}
+$adbOutput = adb.exe shell "content query --uri content://com.android.contacts/contacts"
+$rows = $adbOutput -split "Row: "
+$contacts = @()
+foreach ($row in $rows) {
+    if ($row -ne $null -and $row -ne "") {
+        $kvPairs = $row -split ", " | ForEach-Object { $kv = $_ -split "="; @{$kv[0] = $kv[1]} }
+        $displayName = $kvPairs | Where-Object { $_.display_name }
+        $id = $kvPairs | Where-Object { $_._id }
+        $accountType = $kvPairs | Where-Object { $_.account_type }
+        if ($displayName -and $id -and $accountType) {
+            $contacts += [PSCustomObject]@{
+                'Display Name' = $displayName.display_name
+                'ID' = $id._id
+                'Saved in' = $accountType.account_type
+            }
+        }
+    }
+}
+& adb.exe devices
+Clear-Host
+Write-Host "ANDROID CONTACTS REMOVER"
+Write-Host
+$contacts | Format-Table -AutoSize
+$idToDelete = Read-Host -Prompt "Enter the ID of the contact to delete"
+$confirm = Read-Host -Prompt "Are you sure you want to delete the contact with ID $idToDelete ? (y/n)"
+if ($confirm -eq 'y') {
+    & adb.exe shell "content delete --uri content://com.android.contacts/contacts/$idToDelete"
+    Write-Host "Done"
+	exit 0
+}
+else {
+    Write-Host "Deletion cancelled"
+	exit 1
+}
