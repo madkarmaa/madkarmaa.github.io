@@ -44,6 +44,9 @@ $confirm = Read-Host -Prompt "Are you sure you want to delete the contact with I
 if ($confirm -eq 'y') {
     & adb.exe shell "content delete --uri content://com.android.contacts/contacts/$idToDelete"
     Write-Host "Done"
+    Write-Host
+    Write-Host -NoNewLine 'Press any key to exit...';
+    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
 	exit 0
 }
 else {
