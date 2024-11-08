@@ -1,9 +1,26 @@
 <script lang="ts">
-    import { FAIconType } from '@/types';
+	import { FAIconFamily, FAIconVariant } from '@/types';
 
-    export let iconName: string;
-    export let sharp: boolean = false;
-    export let type: FAIconType = FAIconType.SOLID;
+	type Family = FAIconFamily | `${FAIconFamily}`;
+	type Variant = FAIconVariant | `${FAIconVariant}`;
+
+	type IconOptions =
+		| {
+				brands: true;
+		  }
+		| {
+				brands?: never;
+				family: Family;
+				variant: Variant;
+		  };
+
+	export let name: string;
+	export let options: IconOptions = { family: 'classic', variant: 'solid' };
+
+	const classes: string[] = [`fa-${name}`];
+
+	if (options.brands) classes.push('fa-brands');
+	else Object.values(options).forEach((option) => classes.push(`fa-${option}`));
 </script>
 
-<i class="mr-2 h-4 w-4 fa-{iconName} fa-{type} {sharp ? 'fa-sharp' : ''} flex justify-center items-center"></i>
+<i class="{classes.join(' ')} mr-2 h-4 w-4 flex justify-center items-center"></i>
