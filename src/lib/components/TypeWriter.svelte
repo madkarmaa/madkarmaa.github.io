@@ -1,29 +1,3 @@
-<!--
-  @component
-
-  A `<span>` element with a typewriter effect.
-
-  ## Props:
-  - `hideCaretOnEnd`: A boolean indicating whether the caret should be hidden when the text has been fully typed. Defaults to `false`.
-
-  ## Slot(s):
-  - Default content: The text to be displayed. HTML tags will be ignored as it uses `textContent`.
-
-  ## Usage:
-
-  ```svelte
-  <TypeWriter hideCaretOnEnd>
-    Hello, World!
-  </TypeWriter>
-
-  <h1>
-    <TypeWriter>
-      Hello, World!
-    </TypeWriter>
-  </h1>
-  ```
--->
-
 <script lang="ts">
 	import { TypeWriter } from 'svelte-typewrite';
 	import { onMount } from 'svelte';
