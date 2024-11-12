@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import BootSequence from '@/components/BootSequence.svelte';
-	import Terminal from '@/components/Terminal.svelte';
-	import { type Command } from '@/types';
 	import { randomBrainrot } from '@/utils';
 	import { brainrot } from '@/stores';
 
@@ -11,8 +9,6 @@
 	let title: string = $state('Hi :>');
 
 	const messages: string[] = ['skibidi sigma', 'hi :3', 'explod'];
-
-	const commands: Command[] = [];
 
 	$effect(() => {
 		if ($brainrot)
@@ -39,7 +35,3 @@
 </svelte:head>
 
 <BootSequence {messages} bind:complete={bootComplete} />
-
-{#if bootComplete}
-	<Terminal {commands} />
-{/if}

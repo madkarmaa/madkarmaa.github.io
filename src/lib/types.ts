@@ -11,8 +11,3 @@ export enum FAIconVariant {
 	LIGHT = 'light',
 	THIN = 'thin'
 }
-
-export type Command = {
-	name: string;
-	output: () => string;
-};
