@@ -248,7 +248,7 @@
 		position: fixed;
 		pointer-events: none;
 		image-rendering: pixelated;
-		z-index: 9999;
+		z-index: 1000;
 		background-image: url(oneko.gif);
 	}
 </style>

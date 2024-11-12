@@ -39,7 +39,7 @@
 </script>
 
 {#if !complete}
-	<div class="boot-screen noselect z-40" transition:fade={{ duration: 100 }}>
+	<div class="boot-screen noselect" transition:fade={{ duration: 100 }}>
 		{#each logs as log}
 			<div class="log-line" transition:fly={{ y: 5, duration: 50 }}>
 				{log}
@@ -59,7 +59,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		z-index: 1000;
+		z-index: 9999;
 		overflow-y: auto;
 		text-align: left;
 	}
