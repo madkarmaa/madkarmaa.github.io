@@ -6,9 +6,10 @@
 		onend?: () => void;
 		messages: string[];
 		complete?: boolean;
+		speed?: number;
 	};
 
-	let { onend = () => {}, messages, complete = $bindable(false) }: Props = $props();
+	let { onend = () => {}, messages, complete = $bindable(false), speed = 50 }: Props = $props();
 
 	let lastNumber = 0;
 	export function generateNextAddress(): string {
@@ -30,12 +31,10 @@
 				i++;
 			} else {
 				clearInterval(interval);
-				setTimeout(() => {
-					complete = true;
-				}, 250);
+				complete = true;
 				onend();
 			}
-		}, 100);
+		}, speed);
 	});
 </script>
 
