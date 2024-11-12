@@ -3,12 +3,11 @@
 	import BootSequence from '@/components/BootSequence.svelte';
 	import { randomBrainrot } from '@/utils';
 	import { brainrot } from '@/stores';
+	import { bootMessages } from '@/constants';
 
 	let intervalId: number = 0;
 	let bootComplete: boolean = $state(false);
 	let title: string = $state('Hi :>');
-
-	const messages: string[] = ['skibidi sigma', 'hi :3', 'explod'];
 
 	$effect(() => {
 		if ($brainrot)
@@ -34,4 +33,4 @@
 	<title>{title}</title>
 </svelte:head>
 
-<BootSequence {messages} bind:complete={bootComplete} />
+<BootSequence messages={bootMessages} bind:complete={bootComplete} />
