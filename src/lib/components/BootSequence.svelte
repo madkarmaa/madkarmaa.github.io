@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
-	import { generateNext } from '@/utils';
 
 	type Props = {
 		onend?: () => void;
@@ -10,9 +9,18 @@
 	};
 
 	let { onend = () => {}, messages, complete = $bindable(false) }: Props = $props();
-	messages = messages.map((message) => `[    0.${generateNext()}] ${message}`);
 
-	let logs: string[] = $state([]);
+	let lastNumber = 0;
+	export function generateNextAddress(): string {
+		const increment = Math.floor(Math.random() * 50) + 1; // Random increment between 1 and 50
+		lastNumber = Math.min(lastNumber + increment, 999999); // Ensure max is 999999
+
+		// Convert the number to a string and pad it to 6 digits
+		return lastNumber.toString().padStart(6, '0');
+	}
+
+	messages = messages.map((message) => `[    0.${generateNextAddress()}] ${message}`);
+	let logs = $state<string[]>([]);
 
 	onMount(() => {
 		let i = 0;
@@ -45,7 +53,7 @@
 	.boot-screen {
 		background-color: black;
 		color: #ffffff;
-		font-family: 'Courier New', monospace;
+		font-family: 'Courier New', 'Courier', monospace;
 		padding: 10px;
 		position: fixed;
 		top: 0;

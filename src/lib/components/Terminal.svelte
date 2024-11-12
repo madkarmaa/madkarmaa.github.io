@@ -12,7 +12,6 @@
 
 	let currentLine = '';
 	let history: string[] = [];
-	let commandIndex = 0;
 
 	function handleCommand(cmd: string) {
 		cmd = cmd.trim().toLowerCase();
@@ -25,7 +24,6 @@
 			history = [...history, `> ${cmd}`, 'Command not found. Type "help" for available commands.'];
 
 		currentLine = '';
-		commandIndex = history.length;
 	}
 
 	function handleKeydown(event: KeyboardEvent) {
@@ -56,7 +54,7 @@
 				type="text"
 				bind:value={currentLine}
 				on:keydown={handleKeydown}
-				spellcheck="false"
+				spellcheck={false}
 				autocomplete="off"
 			/>
 		</div>
@@ -64,12 +62,20 @@
 </div>
 
 <style>
+	.glass {
+		background: var(--glass-bg);
+		backdrop-filter: blur(8px);
+		border: 1px solid var(--glass-border);
+		border-radius: 8px;
+	}
+
 	.terminal {
 		margin: 2rem auto;
 		max-width: 800px;
 		height: 500px;
 		overflow-y: auto;
 		position: relative;
+		background: red; /* remove later */
 	}
 
 	.terminal-header {
@@ -133,11 +139,9 @@
 	input {
 		flex: 1;
 		background: transparent;
-		border: none;
 		color: var(--terminal-text);
 		font-family: inherit;
 		font-size: inherit;
-		outline: none;
 	}
 
 	::-webkit-scrollbar {
