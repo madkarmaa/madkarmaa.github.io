@@ -32,7 +32,7 @@
 				clearInterval(interval);
 				setTimeout(() => {
 					complete = true;
-				}, 500);
+				}, 250);
 				onend();
 			}
 		}, 100);
