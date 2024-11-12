@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
 
-export const brainrot = writable(false);
+export const car = writable(false);

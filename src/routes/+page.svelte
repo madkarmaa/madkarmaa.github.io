@@ -1,28 +1,22 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import BootSequence from '@/components/BootSequence.svelte';
-	import { randomBrainrot, secToMs } from '@/utils';
-	import { brainrot } from '@/stores';
+	import { car } from '@/stores';
 	import { bootMessages } from '@/constants';
+	import Neko from '@/components/Neko.svelte';
 
-	let intervalId: number = 0;
 	let bootComplete: boolean = $state(false);
-	let title: string = $state('Hi :>');
+	let title: string = $state('');
 
 	$effect(() => {
-		if ($brainrot)
-			intervalId = setInterval(() => {
-				title = randomBrainrot();
-			}, secToMs(30));
-		else clearInterval(intervalId);
+		title = bootComplete ? '/bin/mksh' : 'booting...';
 	});
 
 	onMount(() => {
 		try {
-			Object.defineProperty(window, 'I_WANT_THE_BRAINROT', {
+			Object.defineProperty(window, 'OMG_CARRRRRR', {
 				get: () => {
-					brainrot.set(!$brainrot);
-					if ($brainrot) console.log('%c So skibidi', 'color: red; font-size: 4rem;');
+					car.set(!$car);
 				}
 			});
 		} catch {}
@@ -34,3 +28,7 @@
 </svelte:head>
 
 <BootSequence messages={bootMessages} bind:complete={bootComplete} />
+
+{#if $car}
+	<Neko />
+{/if}
