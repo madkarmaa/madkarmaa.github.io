@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import BootSequence from '@/components/BootSequence.svelte';
-	import { randomBrainrot } from '@/utils';
+	import { randomBrainrot, secToMs } from '@/utils';
 	import { brainrot } from '@/stores';
 	import { bootMessages } from '@/constants';
 
@@ -13,7 +13,7 @@
 		if ($brainrot)
 			intervalId = setInterval(() => {
 				title = randomBrainrot();
-			}, 30000);
+			}, secToMs(30));
 		else clearInterval(intervalId);
 	});
 
