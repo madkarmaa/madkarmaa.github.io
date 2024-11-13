@@ -1,0 +1,65 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { choose, secToMs } from '@/utils';
+	import type { Sound } from '@/types';
+	import { images, sounds } from '@/constants';
+
+	let selected_image: string | undefined = $state();
+	let selected_sound: Sound | undefined = $state();
+	let show_image: boolean = $state(false);
+
+	const reset = () => {
+		selected_image = undefined;
+		selected_sound = undefined;
+		show_image = false;
+	};
+
+	const handle_keydown = async (e: KeyboardEvent) => {
+		if (e.key !== 'Enter') return;
+		reset();
+
+		selected_image = choose(images);
+		selected_sound = choose(sounds);
+
+		setTimeout(() => {
+			show_image = true;
+		}, secToMs(selected_sound.delay));
+	};
+
+	onMount(() => {
+		handle_keydown(new KeyboardEvent('init', { key: 'Enter' }));
+	});
+</script>
+
+<svelte:window on:keydown={handle_keydown} />
+
+<main>
+	{#if selected_sound}
+		<audio src={selected_sound.src} controls={false} autoplay></audio>
+	{/if}
+	<div class="image-container">
+		{#if show_image}
+			<img src={selected_image} alt="object_image" />
+		{/if}
+	</div>
+</main>
+
+<style>
+	main {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+	}
+
+	.image-container {
+		width: 50vw;
+		height: 50vh;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+</style>
