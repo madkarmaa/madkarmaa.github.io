@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { choose, secToMs } from '@/utils';
 	import type { Sound } from '@/types';
 	import { images, sounds } from '@/constants';
@@ -8,14 +7,19 @@
 	let selected_sound: Sound | undefined = $state();
 	let show_image: boolean = $state(false);
 
+	let audio_element: HTMLAudioElement | undefined = $state();
+
 	const reset = () => {
+		if (!audio_element) return;
+
+		audio_element.pause();
+		audio_element.currentTime = 0;
 		selected_image = undefined;
 		selected_sound = undefined;
 		show_image = false;
 	};
 
-	const handle_keydown = async (e: KeyboardEvent) => {
-		if (e.key !== 'Enter') return;
+	const play = () => {
 		reset();
 
 		selected_image = choose(images);
@@ -26,16 +30,18 @@
 		}, secToMs(selected_sound.delay));
 	};
 
-	onMount(() => {
-		handle_keydown(new KeyboardEvent('init', { key: 'Enter' }));
-	});
+	const handle_keydown = async (e: KeyboardEvent) => {
+		console.log(e.key);
+		if (e.key !== ' ') return;
+		play();
+	};
 </script>
 
-<svelte:window on:keydown={handle_keydown} />
+<svelte:window on:keydown={handle_keydown} on:touchstart={play} />
 
 <main>
 	{#if selected_sound}
-		<audio src={selected_sound.src} controls={false} autoplay></audio>
+		<audio src={selected_sound.src} bind:this={audio_element} onended={reset} autoplay></audio>
 	{/if}
 	<div class="image-container">
 		{#if show_image}
