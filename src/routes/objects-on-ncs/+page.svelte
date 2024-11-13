@@ -2,6 +2,9 @@
 	import { choose, secToMs } from '@/utils';
 	import type { Sound } from '@/types';
 	import { images, sounds } from '@/constants';
+	import { useragent } from '@sveu/browser';
+
+	const { mobile } = useragent();
 
 	let selected_image: string | undefined = $state();
 	let selected_sound: Sound | undefined = $state();
@@ -42,12 +45,16 @@
 <main>
 	{#if selected_sound}
 		<audio src={selected_sound.src} bind:this={audio_element} onended={reset} autoplay></audio>
+	{:else if $mobile}
+		Tap to start
+	{:else}
+		Press SPACEBAR to start
 	{/if}
-	<div class="image-container">
-		{#if show_image}
+	{#if show_image}
+		<div class="image-container">
 			<img src={selected_image} alt="object_image" />
-		{/if}
-	</div>
+		</div>
+	{/if}
 </main>
 
 <style>
