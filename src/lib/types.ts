@@ -11,9 +11,3 @@ export enum FAIconVariant {
 	LIGHT = 'light',
 	THIN = 'thin'
 }
-
-export type Sound = {
-	src: string;
-	name: string;
-	delay: number;
-};
