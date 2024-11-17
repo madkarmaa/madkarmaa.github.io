@@ -1,4 +1,4 @@
 import '../app.css';
-import '../deep-freeze';
+import '../lib/deep-freeze';
 
 export const prerender = true;

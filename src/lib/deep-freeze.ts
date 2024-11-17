@@ -9,7 +9,7 @@ const originalSeal = Object.seal;
 function deepFreezeAndSeal<T extends Record<string, any>>(obj: T): Readonly<T> {
 	Object.getOwnPropertyNames(obj).forEach((prop) => {
 		const value = obj[prop];
-		if (value && typeof value === 'object') deepFreezeAndSeal(value);
+		if (value !== null && typeof value === 'object') deepFreezeAndSeal(value);
 	});
 
 	originalSeal(obj);
