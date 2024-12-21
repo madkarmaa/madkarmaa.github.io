@@ -8,6 +8,10 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	interface Array<T> {
+		choose(): T | undefined;
+	}
 }
 
 export {};
