@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+
 	import { car } from '@/stores';
 	import Neko from '@/components/Neko.svelte';
+	import Blob from '@/components/Blob.svelte';
 
 	onMount(() => {
 		Object.defineProperty(window, 'OMG_CARRRRRR', {
@@ -16,5 +18,7 @@
 {#if $car}
 	<Neko />
 {/if}
+
+<Blob />
 
 <slot />

@@ -8,7 +8,13 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {}
+		colors: {
+			text: 'rgb(241, 233, 246)',
+			background: 'rgb(16, 7, 22)',
+			primary: 'rgb(196, 149, 224)',
+			secondary: 'rgb(93, 32, 131)',
+			accent: 'rgb(151, 49, 213)'
+		}
 	},
 
 	plugins: [typography, forms, containerQueries, aspectRatio]
