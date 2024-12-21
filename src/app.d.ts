@@ -10,7 +10,7 @@ declare global {
 	}
 
 	interface Array<T> {
-		choose(): T | undefined;
+		choose(): T;
 	}
 }
 
