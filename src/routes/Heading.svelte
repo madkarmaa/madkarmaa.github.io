@@ -2,7 +2,7 @@
 
 <style>
 	#heading {
-		font-size: 10rem;
+		font-size: 12vw;
 		color: var(--text);
 
 		display: flex;
