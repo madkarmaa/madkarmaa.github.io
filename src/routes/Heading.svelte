@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { randomlyTrue } from '@/utils';
+	import { randomlyTrue, isMobileDevice } from '@/utils';
 
 	type Props = { text: string };
 	let { text }: Props = $props();
@@ -22,8 +22,12 @@
 
 <h1 id="heading" class="noselect">
 	{#each text.trim() as letter, i (i)}
-		<!-- svelte-ignore a11y_no_static_element_interactions -->
-		<span onmouseenter={(e) => onHover(letter, e.currentTarget)}>{letter}</span>
+		{#if isMobileDevice()}
+			<span>{letter}</span>
+		{:else}
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<span onmouseenter={(e) => onHover(letter, e.currentTarget)}>{letter}</span>
+		{/if}
 	{/each}
 </h1>
 
