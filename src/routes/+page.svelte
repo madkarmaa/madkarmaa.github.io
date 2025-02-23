@@ -2,4 +2,4 @@
 	import Heading from './Heading.svelte';
 </script>
 
-<Heading />
+<Heading text="MadKarma" />
