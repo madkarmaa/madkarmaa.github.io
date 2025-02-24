@@ -1,13 +1,15 @@
 <script lang="ts">
 	import { randomlyTrue, isMobileDevice } from '@/utils';
 
-	type Props = { text: string };
-	let { text }: Props = $props();
+	type Props = { text: string; shuffleProbability?: number };
+	let { text, shuffleProbability = 2 }: Props = $props();
 
 	const getRandomChar = () => String.fromCharCode(65 + Math.floor(Math.random() * 57));
+	const hoveringElements = new Set<HTMLElement>();
 
 	const onHover = (originalChar: string, element: HTMLElement) => {
-		if (!randomlyTrue(5)) return;
+		if (!randomlyTrue(shuffleProbability) || hoveringElements.has(element)) return;
+		hoveringElements.add(element);
 
 		const intervalId = setInterval(() => {
 			element.textContent = getRandomChar();
@@ -18,6 +20,10 @@
 			element.textContent = originalChar;
 		}, 750);
 	};
+
+	const onMouseLeave = (element: HTMLElement) => {
+		hoveringElements.delete(element);
+	};
 </script>
 
 <h1 id="heading" class="noselect">
@@ -26,7 +32,10 @@
 			<span>{letter}</span>
 		{:else}
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<span onmouseenter={(e) => onHover(letter, e.currentTarget)}>{letter}</span>
+			<span
+				onmouseenter={(e) => onHover(letter, e.currentTarget)}
+				onmouseleave={(e) => onMouseLeave(e.currentTarget)}>{letter}</span
+			>
 		{/if}
 	{/each}
 </h1>

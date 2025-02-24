@@ -2,13 +2,14 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	import { secToMs } from '@/utils';
+	import { isMobileDevice, secToMs } from '@/utils';
 	import { car } from '@/stores';
 
 	type Props = { followSpeed?: number };
 	type Position = { x: number; y: number };
 
-	let { followSpeed = 0.01 }: Props = $props();
+	let { followSpeed = 25 }: Props = $props();
+	followSpeed = followSpeed / 1000;
 
 	let blobPosition: Position = $state({ x: 0, y: 0 });
 	let mousePosition: Position = $state({ x: 0, y: 0 });
@@ -39,7 +40,7 @@
 	});
 </script>
 
-{#if show && !$car}
+{#if show && !$car && !isMobileDevice()}
 	<div
 		class="blob"
 		style="transform: translate(calc({blobPosition.x}px - 50%), calc({blobPosition.y}px - 50%));"
