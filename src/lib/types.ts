@@ -11,3 +11,5 @@ export enum FAIconVariant {
 	LIGHT = 'light',
 	THIN = 'thin'
 }
+
+export type SpecialTargetValues = '_self' | '_blank' | '_parent' | '_top';

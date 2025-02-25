@@ -1,9 +1,17 @@
 <script lang="ts">
-	import Heading from './Heading.svelte';
+	import * as Heading from '@/components/heading';
 	import * as Section from '@/components/section';
 </script>
 
-<Heading text="MadKarma" />
+<Heading.Heading text="MadKarma">
+	{#snippet links()}
+		<Heading.Link text="test" href="/test" />
+		<Heading.Link text="test" href="/test" />
+		<Heading.Link text="test" href="/test" />
+		<Heading.Link text="test" href="/test" />
+		<Heading.Link text="test" href="/test" />
+	{/snippet}
+</Heading.Heading>
 
 <Section.Container>
 	<Section.Item>
