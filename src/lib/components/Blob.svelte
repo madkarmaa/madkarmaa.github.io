@@ -68,7 +68,7 @@
 		pointer-events: none;
 		transform: translate(-50%, -50%);
 		animation: morph 3s infinite ease-in-out;
-		opacity: 0.5;
+		opacity: 0.4;
 		filter: blur(20px);
 		z-index: -1;
 		background: linear-gradient(20deg, var(--primary) 0%, var(--accent) 50%, var(--secondary) 100%);
