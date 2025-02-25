@@ -1,3 +1,5 @@
+import { HTTPError } from '@/utils';
+
 type GhDirectoryFile = {
 	name: string;
 	path: string;
@@ -35,7 +37,7 @@ export default class Repository {
 		this.owner = owner;
 		this.name = name;
 		this.branch = options.branch || 'main';
-		this.fetchFn = options.fetchFn || window.fetch;
+		this.fetchFn = options.fetchFn || fetch;
 	}
 
 	private buildApiUrl(path: string) {
@@ -44,15 +46,27 @@ export default class Repository {
 	}
 
 	public async listDirectory(path: string) {
-		return (await this.fetchFn(this.buildApiUrl(path)).then((r) => r.json())) as GhDirectoryFile[];
+		const res = await this.fetchFn(this.buildApiUrl(path));
+
+		if (!res.ok) throw new HTTPError(res);
+
+		return (await res.json()) as GhDirectoryFile[];
 	}
 
 	public async getFile(path: string) {
-		return (await this.fetchFn(this.buildApiUrl(path)).then((r) => r.json())) as GhFile;
+		const res = await this.fetchFn(this.buildApiUrl(path));
+
+		if (!res.ok) throw new HTTPError(res);
+
+		return (await res.json()) as GhFile;
 	}
 
 	public async getRawFileContents(path: string) {
 		const rawUrl = (await this.getFile(path)).download_url;
-		return await this.fetchFn(rawUrl).then((r) => r.text());
+		const res = await this.fetchFn(rawUrl);
+
+		if (!res.ok) throw new HTTPError(res);
+
+		return await res.text();
 	}
 }

@@ -26,17 +26,35 @@ export const isMobileDevice = (): boolean => {
 	return !isHoverSupported && isTouchSupported;
 };
 
-// https://www.youtube.com/watch?v=AdmGHwvgaVs
-export const catchError = async <T, E extends new (message?: string) => Error>(
+/**
+ * https://www.youtube.com/watch?v=AdmGHwvgaVs
+ */
+export const catchError = async <T, E extends new (...args: any[]) => Error>(
 	promise: Promise<T>,
 	errorsToCatch?: E[]
 ): Promise<[undefined, T] | [InstanceType<E>]> => {
 	try {
 		const data = await promise;
 		return [undefined, data] as [undefined, T];
-	} catch (error: any) {
-		if (!errorsToCatch) return [error];
-		if (errorsToCatch.some((e) => error instanceof e)) return [error];
+	} catch (error) {
+		if (!errorsToCatch || errorsToCatch.some((e) => error instanceof e))
+			return [error as InstanceType<E>];
 		throw error;
 	}
 };
+
+export class HTTPError extends Error {
+	public readonly statusCode: number;
+	public readonly statusText: string;
+
+	public constructor(response: Response) {
+		super(`${response.status}: ${response.statusText}`);
+
+		this.statusCode = response.status;
+		this.statusText = response.statusText;
+	}
+
+	public toString(): string {
+		return `${this.name} - ${this.statusCode}: ${this.statusText}`;
+	}
+}
