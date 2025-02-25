@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
+	import { type TextSide } from '.';
 
 	let index: number = 0;
-	const getNextTextSide = () => (index++ % 2 === 0 ? 'left' : 'right');
+	const getNextTextSide = (): TextSide => (index++ % 2 === 0 ? 'left' : 'right');
 
 	setContext('textSide', getNextTextSide);
 

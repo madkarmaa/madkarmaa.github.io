@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
+	import { type TextSide } from '.';
 
-	type TextSide = 'left' | 'right';
-
-	const getTextSide = getContext<() => TextSide>('textSide');
-	const textSide: TextSide = getTextSide();
+	const textSide: TextSide = getContext<() => TextSide>('textSide')();
 </script>
 
 <div class={textSide}></div>
