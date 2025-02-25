@@ -27,21 +27,38 @@
 
 	.section-item > div {
 		flex: 1;
+		display: flex;
+		align-items: center;
 	}
 
 	.image-container {
-		display: flex;
-		align-items: center;
 		justify-content: center;
 	}
 
+	.image-container > :global(img) {
+		max-width: 100%;
+	}
+
+	.image-container > :global(:not(img)),
+	.image-container > :global(img):not(:first-child) {
+		display: none;
+	}
+
 	.left {
-		text-align: start;
 		flex-direction: row-reverse;
 	}
 
+	.left > .section-content {
+		justify-content: start;
+		text-align: start;
+	}
+
 	.right {
-		text-align: end;
 		flex-direction: row;
+	}
+
+	.right > .section-content {
+		justify-content: end;
+		text-align: end;
 	}
 </style>
