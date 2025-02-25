@@ -25,3 +25,17 @@ export const isMobileDevice = (): boolean => {
 	// if the device does not support hover but supports touch, it's likely a mobile device
 	return !isHoverSupported && isTouchSupported;
 };
+
+export const catchError = async <T, E extends new (message?: string) => Error>(
+	promise: Promise<T>,
+	errorsToCatch?: E[]
+): Promise<[undefined, T] | [InstanceType<E>]> => {
+	try {
+		const data = await promise;
+		return [undefined, data] as [undefined, T];
+	} catch (error: any) {
+		if (!errorsToCatch) return [error];
+		if (errorsToCatch.some((e) => error instanceof e)) return [error];
+		throw error;
+	}
+};
