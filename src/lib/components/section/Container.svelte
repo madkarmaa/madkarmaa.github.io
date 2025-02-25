@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { setContext } from 'svelte';
+	import { setContext, type Snippet } from 'svelte';
 	import { type TextSide } from '.';
 
 	let index: number = 0;
@@ -7,18 +7,18 @@
 
 	setContext('textSide', getNextTextSide);
 
-	let { children } = $props();
+	type Props = { children: Snippet };
+	let { children }: Props = $props();
 </script>
 
-<div id="section-container">
+<div class="section-container">
 	{@render children()}
 </div>
 
 <style>
-	#section-container {
+	.section-container {
 		padding: 1rem;
 		display: flex;
-		align-items: center;
 		justify-content: center;
 		gap: 1rem;
 		flex-direction: column;
