@@ -34,8 +34,10 @@
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<span
 				onmouseenter={(e) => onHover(letter, e.currentTarget)}
-				onmouseleave={(e) => onMouseLeave(e.currentTarget)}>{letter}</span
+				onmouseleave={(e) => onMouseLeave(e.currentTarget)}
 			>
+				{letter}
+			</span>
 		{/if}
 	{/each}
 </h1>
