@@ -26,6 +26,7 @@ export const isMobileDevice = (): boolean => {
 	return !isHoverSupported && isTouchSupported;
 };
 
+// https://www.youtube.com/watch?v=AdmGHwvgaVs
 export const catchError = async <T, E extends new (message?: string) => Error>(
 	promise: Promise<T>,
 	errorsToCatch?: E[]
