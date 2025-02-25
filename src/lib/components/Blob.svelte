@@ -24,7 +24,7 @@
 	};
 
 	const handleMouseMove = (e: MouseEvent) => {
-		mousePosition = { x: e.clientX, y: e.clientY };
+		mousePosition = { x: e.pageX, y: e.pageY };
 	};
 
 	onMount(() => {
