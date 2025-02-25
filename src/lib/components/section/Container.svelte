@@ -17,10 +17,10 @@
 
 <style>
 	.section-container {
-		padding: 1rem;
+		padding: 2rem;
 		display: flex;
 		justify-content: center;
-		gap: 1rem;
+		gap: 5rem;
 		flex-direction: column;
 	}
 </style>

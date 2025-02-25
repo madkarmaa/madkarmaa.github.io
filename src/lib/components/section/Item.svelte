@@ -24,6 +24,7 @@
 <style>
 	.section-item {
 		display: flex;
+		gap: 2rem;
 	}
 
 	.section-item > div {
