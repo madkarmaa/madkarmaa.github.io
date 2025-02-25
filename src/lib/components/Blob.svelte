@@ -17,8 +17,18 @@
 	let show: boolean = $state(false);
 
 	const updateBlobPosition = () => {
+		// calculate new position
 		blobPosition.x += (mousePosition.x - blobPosition.x) * followSpeed;
 		blobPosition.y += (mousePosition.y - blobPosition.y) * followSpeed;
+
+		// get document dimensions
+		const docWidth = document.documentElement.scrollWidth;
+		const docHeight = document.documentElement.scrollHeight;
+
+		// clamp to document boundaries
+		const blobRadius = 150; // half of blob size
+		blobPosition.x = Math.max(blobRadius, Math.min(blobPosition.x, docWidth - blobRadius));
+		blobPosition.y = Math.max(blobRadius, Math.min(blobPosition.y, docHeight - blobRadius));
 
 		animationFrame = requestAnimationFrame(updateBlobPosition);
 	};
