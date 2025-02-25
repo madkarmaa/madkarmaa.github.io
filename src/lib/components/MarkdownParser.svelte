@@ -11,6 +11,7 @@
 </script>
 
 <div class="markdown-container">
+	<!-- TODO: sanitization -->
 	{@html parse(input, { async: false })}
 </div>
 
