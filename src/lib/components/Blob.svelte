@@ -60,11 +60,6 @@
 {/if}
 
 <style>
-	:global(body) {
-		margin: 0;
-		overflow-x: hidden;
-	}
-
 	.blob {
 		position: absolute;
 		width: 300px;
