@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getContext, type Snippet } from 'svelte';
 	import { type TextSide } from '.';
+	import { isMobileDevice } from '@/utils';
 
 	const textSide: TextSide = getContext<() => TextSide>('textSide')();
 
@@ -9,7 +10,7 @@
 </script>
 
 <div class="section-item {textSide}">
-	{#if image}
+	{#if image && !isMobileDevice()}
 		<div class="image-container">
 			{@render image?.()}
 		</div>
