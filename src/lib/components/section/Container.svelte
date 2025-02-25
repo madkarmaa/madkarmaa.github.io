@@ -11,16 +11,6 @@
 	let { children }: Props = $props();
 </script>
 
-<div class="section-container">
+<div class="section-container p-8 flex justify-center gap-20 flex-col">
 	{@render children()}
 </div>
-
-<style>
-	.section-container {
-		padding: 2rem;
-		display: flex;
-		justify-content: center;
-		gap: 5rem;
-		flex-direction: column;
-	}
-</style>

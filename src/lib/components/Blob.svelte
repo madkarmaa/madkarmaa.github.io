@@ -52,7 +52,7 @@
 
 {#if show && !$car && !isMobileDevice()}
 	<div
-		class="blob"
+		class="blob absolute w-[300px] aspect-1 rounded-full pointer-events-none opacity-40 -z-[1] blur-[20px]"
 		style="transform: translate(calc({blobPosition.x}px - 50%), calc({blobPosition.y}px - 50%));"
 		in:fade={{ duration: 500, delay: secToMs(1) }}
 		out:fade={{ duration: 500 }}
@@ -61,16 +61,8 @@
 
 <style>
 	.blob {
-		position: absolute;
-		width: 300px;
-		aspect-ratio: 1;
-		border-radius: 50%;
-		pointer-events: none;
 		transform: translate(-50%, -50%);
 		animation: morph 3s infinite ease-in-out;
-		opacity: 0.4;
-		filter: blur(20px);
-		z-index: -1;
 		background: linear-gradient(20deg, var(--primary) 0%, var(--accent) 50%, var(--secondary) 100%);
 	}
 

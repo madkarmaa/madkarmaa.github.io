@@ -9,9 +9,9 @@
 	let { image, children }: Props = $props();
 </script>
 
-<div class="section-item {textSide}">
+<div class="section-item {textSide} flex gap-8">
 	{#if image && !isMobileDevice()}
-		<div class="image-container">
+		<div class="image-container justify-center max-w-full">
 			{@render image?.()}
 		</div>
 	{/if}
@@ -22,23 +22,14 @@
 </div>
 
 <style>
-	.section-item {
-		display: flex;
-		gap: 2rem;
-	}
-
 	.section-item > div {
 		flex: 1;
 		display: flex;
 		align-items: center;
 	}
 
-	.image-container {
-		justify-content: center;
-	}
-
 	.image-container > :global(img) {
-		max-width: 100%;
+		@apply rounded-lg;
 	}
 
 	.image-container > :global(:not(img)),

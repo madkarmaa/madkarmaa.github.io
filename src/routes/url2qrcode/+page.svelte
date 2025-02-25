@@ -2,7 +2,7 @@
 	import QRCode from 'qrcode';
 
 	let canvas: HTMLCanvasElement;
-	let show_qr: boolean = $state(false);
+	let showQr: boolean = $state(false);
 
 	const generateQRCode = async (e: SubmitEvent) => {
 		e.preventDefault();
@@ -13,48 +13,41 @@
 		if (!URL.canParse(url)) return;
 		await QRCode.toCanvas(canvas, url, { scale: 10 }).catch((err) => alert(err));
 
-		show_qr = true;
+		showQr = true;
 	};
 </script>
 
-<main>
-	<form onsubmit={generateQRCode}>
-		<input type="url" name="url" id="url" placeholder="https://youtube.com" required />
+<main class="min-h-screen p-4 flex items-center justify-center flex-col gap-4">
+	<form onsubmit={generateQRCode} class="flex w-full">
+		<input
+			type="url"
+			name="url"
+			id="url"
+			placeholder="https://youtube.com"
+			required
+			class="flex-1 transition-all rounded-lg"
+		/>
 	</form>
 
-	<canvas bind:this={canvas} class:hidden={!show_qr}></canvas>
+	<canvas bind:this={canvas} class:hidden={!showQr}></canvas>
 </main>
 
 <style>
-	main {
-		min-height: 100vh;
-		padding: 1rem;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	form {
-		display: flex;
-		width: 100%;
-	}
-
 	form > input {
-		flex: 1;
-		border: 2px solid #c5c6c0;
+		border: 2px solid var(--accent);
 		outline: none !important;
 		box-shadow: none !important;
+		background: none;
 	}
 
-	form > input:hover {
-		border: 2px solid #808080;
+	form > input::placeholder {
+		color: var(--text);
+		opacity: 0.5;
 	}
 
+	form > input:hover,
 	form > input:focus,
 	form > input:active {
-		border: 2px solid #000;
+		border: 2px solid var(--primary);
 	}
 </style>

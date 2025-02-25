@@ -27,8 +27,8 @@
 	};
 </script>
 
-<div id="heading-container">
-	<h1 id="heading" class="noselect">
+<div id="heading-container" class="flex items-center justify-center flex-col min-h-screen">
+	<h1 id="heading" class="noselect mix-blend-color-dodge">
 		{#each text.trim() as letter, i (i)}
 			{#if isMobileDevice()}
 				<span>{letter}</span>
@@ -45,38 +45,14 @@
 	</h1>
 
 	{#if links}
-		<div class="links">
+		<div class="links flex flex-wrap items-center justify-center gap-x-8 gap-y-2 max-w-[70%]">
 			{@render links()}
 		</div>
 	{/if}
 </div>
 
 <style>
-	#heading-container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-
-		min-height: 100vh;
-	}
-
-	#heading {
-		mix-blend-mode: color-dodge;
-	}
-
 	#heading > span {
 		font-size: 12vw;
-	}
-
-	.links {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
-		gap: 2rem;
-		row-gap: 0.5rem;
-
-		max-width: 70%;
 	}
 </style>

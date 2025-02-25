@@ -6,13 +6,12 @@
 </script>
 
 <a {href} {target}>
-	<span class="decor text-primary">#</span>
+	<span class="decor text-primary transition-all">#</span>
 	<span class="link-text">{text}</span>
 </a>
 
 <style>
 	a:hover .decor {
-		@apply transition-all;
 		color: var(--accent);
 	}
 
