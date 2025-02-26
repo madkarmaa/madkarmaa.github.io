@@ -1,11 +1,14 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { type Snippet } from 'svelte';
 
 	import { car } from '@/stores';
 	import Neko from '@/components/Neko.svelte';
 	import Blob from '@/components/Blob.svelte';
 
-	onMount(() => {
+	type Props = { children: Snippet };
+	let { children }: Props = $props();
+
+	$effect(() => {
 		Object.defineProperty(window, 'OMG_CARRRRRR', {
 			get: () => {
 				car.set(!$car);
@@ -21,4 +24,4 @@
 
 <Blob />
 
-<slot />
+{@render children()}
