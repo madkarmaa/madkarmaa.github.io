@@ -133,7 +133,7 @@
 		border: 2px solid var(--primary);
 	}
 
-	main :global(:not(pre) > code) {
+	main :global(code:not([class])) {
 		@apply rounded-lg;
 
 		background-color: var(--accent);
