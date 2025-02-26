@@ -109,6 +109,7 @@
 
 	main :global(img) {
 		@apply rounded-lg;
+
 		max-width: 80%;
 	}
 
