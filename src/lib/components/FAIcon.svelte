@@ -14,8 +14,8 @@
 				variant: Variant;
 		  };
 
-	export let name: string;
-	export let options: IconOptions = { family: 'classic', variant: 'solid' };
+	type Props = { name: string; options?: IconOptions };
+	let { name, options = { family: 'classic', variant: 'solid' } }: Props = $props();
 
 	const classes: string[] = [`fa-${name}`];
 
