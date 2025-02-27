@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: 'master'
+    paths-ignore:
+      - 'blog-posts/**'
   workflow_dispatch:
 
 jobs:
