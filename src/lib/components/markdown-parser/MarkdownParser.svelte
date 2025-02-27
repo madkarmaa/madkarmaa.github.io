@@ -148,4 +148,9 @@
 	.markdown-container :global(pre > code) {
 		@apply rounded-lg;
 	}
+
+	.markdown-container :global(blockquote) {
+		border-left: 3px solid var(--secondary);
+		padding-left: 1rem;
+	}
 </style>
