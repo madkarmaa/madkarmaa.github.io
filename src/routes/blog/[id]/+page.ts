@@ -11,7 +11,7 @@ export async function load({ fetch, params }) {
 
 	// prettier-ignore
 	const [error, content] = await catchError(
-		repo.getRawFileContents(`blog/${params.id}.md`),
+		repo.getRawFileContents(`blog-posts/${params.id}.md`),
 		[HTTPError]
 	);
 
