@@ -34,10 +34,10 @@
 	};
 
 	const handleMouseMove = (e: MouseEvent) => {
-		mousePosition = { x: e.pageX, y: e.pageY };
+		mousePosition = { x: e.clientX, y: e.clientY };
 	};
 
-	onMount(() => {
+	$effect(() => {
 		window.addEventListener('mousemove', handleMouseMove);
 		animationFrame = requestAnimationFrame(updateBlobPosition);
 
@@ -52,7 +52,7 @@
 
 {#if show && !$car && !isMobileDevice()}
 	<div
-		class="blob absolute w-[300px] aspect-1 rounded-full pointer-events-none opacity-40 -z-[1] blur-[20px]"
+		class="blob fixed w-[300px] aspect-1 rounded-full pointer-events-none opacity-40 -z-[1] blur-[20px]"
 		style="transform: translate(calc({blobPosition.x}px - 50%), calc({blobPosition.y}px - 50%));"
 		in:fade={{ duration: 500, delay: secToMs(1) }}
 		out:fade={{ duration: 500 }}
