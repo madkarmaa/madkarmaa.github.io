@@ -8,11 +8,15 @@ export async function load({ fetch }) {
 
 	// prettier-ignore
 	const [error, files] = await catchError(
-		repo.listDirectory(`blog-posts`),
+		repo.listDirectory(`src`),
 		[HTTPError]
 	);
 
 	if (error) errorRedirect(404, { message: 'No posts found' });
 
-	return { files };
+	const posts = files.filter((file) => file.download_url && file.name.endsWith('.md'));
+
+	if (!posts || !posts.length) errorRedirect(404, { message: 'No posts found' });
+
+	return { posts };
 }
