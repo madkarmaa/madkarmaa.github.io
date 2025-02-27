@@ -8,7 +8,7 @@ export async function load({ fetch }) {
 
 	// prettier-ignore
 	const [error, files] = await catchError(
-		repo.listDirectory(`blog`),
+		repo.listDirectory(`blog-posts`),
 		[HTTPError]
 	);
 
