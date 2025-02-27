@@ -2,7 +2,7 @@
 	import MarkdownParser from '@/components/MarkdownParser.svelte';
 
 	let { data } = $props();
-	const { error, content } = data;
+	const { content } = data;
 </script>
 
 <MarkdownParser input={content} />
