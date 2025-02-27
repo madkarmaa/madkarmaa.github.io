@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MarkdownParser from '@/components/MarkdownParser.svelte';
+	import { MarkdownParser } from '@/components/markdown-parser';
 
 	let { data } = $props();
 	const { content } = data;

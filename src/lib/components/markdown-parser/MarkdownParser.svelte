@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { marked as parse } from 'marked';
+	import parser from './highlighter';
 
 	type Props = { input: string };
 	let { input = $bindable('') }: Props = $props();
@@ -12,7 +12,7 @@
 
 <div class="markdown-container flex flex-col gap-4">
 	<!-- TODO: sanitization -->
-	{@html parse(input, { async: false })}
+	{@html parser.parse(input, { async: false })}
 </div>
 
 <style>
