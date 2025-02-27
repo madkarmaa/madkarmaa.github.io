@@ -12,7 +12,7 @@ export async function load({ fetch }) {
 		[HTTPError]
 	);
 
-	if (error) errorRedirect(404, { message: 'No posts not found' });
+	if (error) errorRedirect(404, { message: 'No posts found' });
 
 	return { files };
 }
