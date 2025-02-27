@@ -144,4 +144,8 @@
 	.markdown-container :global(hr) {
 		border-top: 2px solid var(--primary);
 	}
+
+	.markdown-container :global(pre > code) {
+		@apply rounded-lg;
+	}
 </style>
