@@ -10,86 +10,86 @@
 	});
 </script>
 
-<main class="markdown-container p-8 flex flex-col gap-4">
+<div class="markdown-container flex flex-col gap-4">
 	<!-- TODO: sanitization -->
 	{@html parse(input, { async: false })}
-</main>
+</div>
 
 <style>
-	main :global(h1) {
+	.markdown-container :global(h1) {
 		font-size: 2.4rem;
 		text-align: center;
 		color: var(--primary);
 		font-weight: 600;
 	}
 
-	main :global(h2),
-	main :global(h3),
-	main :global(h4),
-	main :global(h5),
-	main :global(h6) {
+	.markdown-container :global(h2),
+	.markdown-container :global(h3),
+	.markdown-container :global(h4),
+	.markdown-container :global(h5),
+	.markdown-container :global(h6) {
 		color: var(--accent);
 		font-weight: 600;
 	}
 
-	main :global(h2) {
+	.markdown-container :global(h2) {
 		font-size: 2rem;
 	}
 
-	main :global(h3) {
+	.markdown-container :global(h3) {
 		font-size: 1.8rem;
 	}
 
-	main :global(h4) {
+	.markdown-container :global(h4) {
 		font-size: 1.6rem;
 	}
 
-	main :global(h5) {
+	.markdown-container :global(h5) {
 		font-size: 1.4rem;
 	}
 
-	main :global(h6) {
+	.markdown-container :global(h6) {
 		font-size: 1.2rem;
 	}
 
-	main :global(em) {
+	.markdown-container :global(em) {
 		font-style: italic;
 	}
 
-	main :global(strong) {
+	.markdown-container :global(strong) {
 		font-weight: 600;
 	}
 
-	main :global(del) {
+	.markdown-container :global(del) {
 		text-decoration: line-through;
 		text-decoration-color: var(--primary);
 	}
 
-	main :global(ol) {
+	.markdown-container :global(ol) {
 		list-style: decimal inside;
 	}
 
-	main :global(ul) {
+	.markdown-container :global(ul) {
 		list-style: disc inside;
 	}
 
-	main :global(ol > ::marker),
-	main :global(ul > ::marker) {
+	.markdown-container :global(ol > ::marker),
+	.markdown-container :global(ul > ::marker) {
 		color: var(--primary);
 	}
 
-	main :global(ol:has(> li > ol)),
-	main :global(ol:has(> li > ul)),
-	main :global(ul:has(> li > ol)),
-	main :global(ul:has(> li > ul)) {
+	.markdown-container :global(ol:has(> li > ol)),
+	.markdown-container :global(ol:has(> li > ul)),
+	.markdown-container :global(ul:has(> li > ol)),
+	.markdown-container :global(ul:has(> li > ul)) {
 		padding-left: 1rem;
 	}
 
-	main :global(li > p) {
+	.markdown-container :global(li > p) {
 		display: inline-block;
 	}
 
-	main :global(a) {
+	.markdown-container :global(a) {
 		@apply transition-all;
 
 		color: var(--primary);
@@ -97,51 +97,51 @@
 		cursor: pointer;
 	}
 
-	main :global(a:hover) {
+	.markdown-container :global(a:hover) {
 		color: var(--accent);
 		text-decoration: underline;
 	}
 
-	main :global(input[type='checkbox']) {
+	.markdown-container :global(input[type='checkbox']) {
 		border: none;
 		color: var(--accent);
 	}
 
-	main :global(img) {
+	.markdown-container :global(img) {
 		@apply rounded-lg;
 
 		max-width: 80%;
 	}
 
-	main :global(table) {
+	.markdown-container :global(table) {
 		width: 100%;
 		border-collapse: collapse;
 	}
 
-	main :global(th) {
+	.markdown-container :global(th) {
 		color: var(--accent);
 		font-size: 1.2rem;
 		font-weight: 600;
 	}
 
-	main :global(td) {
+	.markdown-container :global(td) {
 		padding: 0.3rem;
 	}
 
-	main :global(table),
-	main :global(td),
-	main :global(th) {
+	.markdown-container :global(table),
+	.markdown-container :global(td),
+	.markdown-container :global(th) {
 		border: 2px solid var(--primary);
 	}
 
-	main :global(code:not([class])) {
+	.markdown-container :global(code:not([class])) {
 		@apply rounded-lg;
 
 		background-color: var(--accent);
 		padding: 0.25rem;
 	}
 
-	main :global(hr) {
+	.markdown-container :global(hr) {
 		border-top: 2px solid var(--primary);
 	}
 </style>

@@ -5,4 +5,6 @@
 	const { content } = data;
 </script>
 
-<MarkdownParser input={content} />
+<main class="p-6">
+	<MarkdownParser input={content} />
+</main>
