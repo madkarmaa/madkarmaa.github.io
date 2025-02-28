@@ -11,6 +11,7 @@
 </script>
 
 <a class="post-card-container flex flex-col gap-3" href={`${window.location.pathname}/${name}`}>
+	<!--                                                                      ^ I don't plan on using the component anywhere else -->
 	<h2 class="post-name">
 		<span class="slash transition-all inline-block text-accent">/</span>
 		<span>{name}</span>
