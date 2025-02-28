@@ -4,14 +4,16 @@
 	type Props = { name: string; content: string | Promise<string> };
 	let { name, content }: Props = $props();
 
+	name = name.trim().replace('.md', '');
+
 	let contentPromise: ReturnType<typeof catchError<string, typeof HTTPError>> | null = $state(null);
 	if (typeof content !== 'string') contentPromise = catchError(content, [HTTPError]);
 </script>
 
-<div class="post-card-container flex flex-col gap-3">
+<a class="post-card-container flex flex-col gap-3" href={`${window.location.pathname}/${name}`}>
 	<h2 class="post-name">
 		<span class="slash transition-all inline-block text-accent">/</span>
-		<span>{name.trim().replace('.md', '')}</span>
+		<span>{name}</span>
 	</h2>
 	<span class="read-time">
 		{#if typeof content === 'string'}
@@ -28,7 +30,7 @@
 			{/await}
 		{/if}
 	</span>
-</div>
+</a>
 
 <style>
 	.post-name > * {
