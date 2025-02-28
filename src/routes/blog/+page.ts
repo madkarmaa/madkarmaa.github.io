@@ -13,16 +13,8 @@ export async function load({ fetch }) {
 
 	if (error) errorRedirect(404, { message: 'No posts found' });
 
-	const posts = files
-		.filter((file) => file.download_url && file.name.endsWith('.md'))
-		//                            ^ this filters out directories
-		.map((file) => {
-			return {
-				...file,
-				// it fetches but doesn't block
-				content_promise: repo.getRawFileContents(file.path)
-			};
-		});
+	const posts = files.filter((file) => file.download_url && file.name.endsWith('.md'));
+	//                                           ^ this filters out directories
 
 	if (!posts || !posts.length) errorRedirect(404, { message: 'No posts found' });
 

@@ -5,6 +5,6 @@
 	const { posts } = data;
 </script>
 
-{#each posts as post, i (i)}
-	<PostCard name={post.name} content={post.content_promise} />
-{/each}
+<!-- {#each posts as post, i (i)}
+	<PostCard name={post.name} />
+{/each} -->
