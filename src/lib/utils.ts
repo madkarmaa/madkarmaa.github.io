@@ -58,3 +58,6 @@ export class HTTPError extends Error {
 		return `${this.name} - ${this.statusCode}: ${this.statusText}`;
 	}
 }
+
+export const calculateReadTime = (text: string, wordsPerMinute: number = 200): number =>
+	Math.ceil(text.split(' ').length / wordsPerMinute);

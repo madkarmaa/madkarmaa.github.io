@@ -1,4 +1,5 @@
 import { HTTPError } from '@/utils';
+import type { Fetch } from '@/types';
 
 type GhDirectoryFile = {
 	name: string;
@@ -24,14 +25,14 @@ type GhFile = GhDirectoryFile & {
 
 type RepositoryOptions = {
 	branch?: string;
-	fetchFn?: typeof Window.prototype.fetch;
+	fetchFn?: Fetch;
 };
 
 export default class Repository {
 	private owner: string;
 	private name: string;
 	private branch: string;
-	private fetchFn: typeof Window.prototype.fetch;
+	private fetchFn: Fetch;
 
 	public constructor(owner: string, name: string, options: RepositoryOptions = {}) {
 		this.owner = owner;
@@ -68,5 +69,10 @@ export default class Repository {
 		if (!res.ok) throw new HTTPError(res);
 
 		return await res.text();
+	}
+
+	public useFetchFn(fn: Fetch): this {
+		this.fetchFn = fn;
+		return this;
 	}
 }
