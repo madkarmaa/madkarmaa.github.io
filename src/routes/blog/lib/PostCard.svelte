@@ -11,12 +11,12 @@
 </script>
 
 <a
-	class="post-card-container flex flex-col gap-3 rounded-lg p-4 backdrop-blur-2xl border-secondary border-2"
+	class="post-card-container flex flex-col gap-3 rounded-lg p-4 backdrop-blur-2xl border-secondary border-2 backdrop-brightness-75 hover:border-primary transition-all"
 	href={`${page.url.pathname}?post=${name}`}
 	in:fly={{ y: 20, duration: 400, delay: index * 100, easing: cubicOut }}
 >
 	<h2 class="post-name">
-		<span class="slash transition-all inline-block text-accent">/</span>
+		<span class="slash transition-all inline-block text-primary">/</span>
 		<span class="font-semibold">{name}</span>
 	</h2>
 	<span class="read-time">~<span class="text-primary">{readTime} min</span> read</span>
@@ -29,7 +29,7 @@
 
 	.post-card-container:hover .slash {
 		transform: rotate(180deg);
-		color: var(--primary);
+		color: var(--accent);
 	}
 
 	.read-time,
