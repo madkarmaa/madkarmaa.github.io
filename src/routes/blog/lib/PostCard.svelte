@@ -1,18 +1,24 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { cubicOut } from 'svelte/easing';
+	import type { Post as Props } from '../+page';
+	import { fly } from 'svelte/transition';
 
-	type Props = { name: string };
-	let { name }: Props = $props();
+	let { name, readTime, index = 0 }: Props & { index?: number } = $props();
 
 	name = name.trim().replace('.md', '');
 </script>
 
-<a class="post-card-container flex flex-col gap-3" href={`${page.url.pathname}/${name}`}>
-	<!--                                                                ^ I don't plan on using the component anywhere else -->
+<a
+	class="post-card-container flex flex-col gap-3 rounded-lg p-4 backdrop-blur-2xl border-secondary border-2"
+	href={`${page.url.pathname}?post=${name}`}
+	in:fly={{ y: 20, duration: 400, delay: index * 100, easing: cubicOut }}
+>
 	<h2 class="post-name">
 		<span class="slash transition-all inline-block text-accent">/</span>
-		<span>{name}</span>
+		<span class="font-semibold">{name}</span>
 	</h2>
+	<span class="read-time">~<span class="text-primary">{readTime} min</span> read</span>
 </a>
 
 <style>
@@ -23,5 +29,10 @@
 	.post-card-container:hover .slash {
 		transform: rotate(180deg);
 		color: var(--primary);
+	}
+
+	.read-time,
+	.read-time * {
+		@apply text-sm;
 	}
 </style>
