@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { cubicOut } from 'svelte/easing';
-	import type { Post as Props } from '../+page';
+	import type { Post } from '../+page';
 	import { fly } from 'svelte/transition';
 
-	let { name, readTime, index = 0 }: Props & { index?: number } = $props();
+	type Props = Post & { index?: number };
+	let { name, readTime, index = 0 }: Props = $props();
 
 	name = name.trim().replace('.md', '');
 </script>
