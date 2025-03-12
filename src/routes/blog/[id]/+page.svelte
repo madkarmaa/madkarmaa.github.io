@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { MarkdownParser } from '@/components/markdown-parser';
-	import FaIcon from '@/components/FAIcon.svelte';
+	import { Icon } from '@/components/icon';
 
 	let { data } = $props();
 	const { content, title } = data;
@@ -13,7 +13,7 @@
 <main class="p-6">
 	<div class="mb-4">
 		<a href="/blog" class="text-primary hover:text-accent transition-colors">
-			<FaIcon name="arrow-left" color="var(--text)" />
+			<Icon name="arrow-left" color="var(--text)" />
 			Back to posts
 		</a>
 	</div>

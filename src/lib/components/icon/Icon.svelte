@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { FAIconFamily, FAIconVariant } from '@/types';
+	import type { IconFamily, IconVariant } from '.';
 
-	type Family = FAIconFamily | `${FAIconFamily}`;
-	type Variant = FAIconVariant | `${FAIconVariant}`;
+	type Family = IconFamily | `${IconFamily}`;
+	type Variant = IconVariant | `${IconVariant}`;
 
 	type IconOptions =
 		| { brands: true }
@@ -12,10 +12,11 @@
 				variant: Variant;
 		  };
 
-	type Props = { name: string; color?: string; options?: IconOptions };
+	type Props = { name: string; color?: string; size?: string; options?: IconOptions };
 	let {
 		name,
-		color = 'inherit',
+		color = 'currentColor',
+		size = 'inherit',
 		options = { family: 'classic', variant: 'solid' }
 	}: Props = $props();
 
@@ -26,4 +27,4 @@
 </script>
 
 <!-- prettier-ignore -->
-<i class="{classes.join(' ')} mr-2 justify-center items-center inline-flex" style="color: {color}"></i>
+<i class="{classes.join(' ')} mr-2 justify-center items-center inline-flex" style="color: {color}; font-size: {size};"></i>
