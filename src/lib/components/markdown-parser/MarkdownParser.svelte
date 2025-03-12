@@ -78,10 +78,8 @@
 		color: var(--primary);
 	}
 
-	.markdown-container :global(ol:has(> li > ol)),
-	.markdown-container :global(ol:has(> li > ul)),
-	.markdown-container :global(ul:has(> li > ol)),
-	.markdown-container :global(ul:has(> li > ul)) {
+	.markdown-container :global(li ol),
+	.markdown-container :global(li ul) {
 		padding-left: 1rem;
 	}
 
