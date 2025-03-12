@@ -11,6 +11,15 @@ const config = {
 		alias: {
 			'@/*': './src/lib/*',
 			'@assets/*': './static/*'
+		},
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// ignore 404 errors for GitHub repository links
+				if (path.startsWith('/blob/') || path.includes('github.com')) return;
+
+				// otherwise fail the build
+				throw new Error(message);
+			}
 		}
 	}
 };

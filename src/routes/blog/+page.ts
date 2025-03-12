@@ -7,19 +7,8 @@ export type Post = {
 	readTime: number;
 };
 
-export async function load({ fetch, url }) {
+export async function load({ fetch }) {
 	const repo = repository.useFetchFn(fetch);
-	const postName = url.searchParams.get('post');
-
-	if (postName) {
-		const [error, content] = await catchError(
-			repo.getRawFileContents(`blog-posts/${postName}.md`),
-			[HTTPError]
-		);
-
-		if (error) errorRedirect(404, { message: 'Post not found' });
-		return { content, posts: null };
-	}
 
 	const [error, files] = await catchError(repo.listDirectory('blog-posts'), [HTTPError]);
 
@@ -39,5 +28,5 @@ export async function load({ fetch, url }) {
 
 	if (!posts || !posts.length) errorRedirect(404, { message: 'No posts found' });
 
-	return { posts, content: null };
+	return { posts };
 }
