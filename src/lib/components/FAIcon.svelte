@@ -5,17 +5,19 @@
 	type Variant = FAIconVariant | `${FAIconVariant}`;
 
 	type IconOptions =
-		| {
-				brands: true;
-		  }
+		| { brands: true }
 		| {
 				brands?: never;
 				family: Family;
 				variant: Variant;
 		  };
 
-	type Props = { name: string; options?: IconOptions };
-	let { name, options = { family: 'classic', variant: 'solid' } }: Props = $props();
+	type Props = { name: string; color?: string; options?: IconOptions };
+	let {
+		name,
+		color = 'inherit',
+		options = { family: 'classic', variant: 'solid' }
+	}: Props = $props();
 
 	const classes: string[] = [`fa-${name}`];
 
@@ -23,4 +25,5 @@
 	else Object.values(options).forEach((option) => classes.push(`fa-${option}`));
 </script>
 
-<i class="{classes.join(' ')} mr-2 h-4 w-4 flex justify-center items-center"></i>
+<!-- prettier-ignore -->
+<i class="{classes.join(' ')} mr-2 justify-center items-center inline-flex" style="color: {color}"></i>
