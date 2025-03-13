@@ -64,6 +64,17 @@ New-Item -Path $allFolders -Force
 New-ItemProperty -Path $allFolders -Name "FolderType" -Value "NotSpecified" -PropertyType String -Force
 ```
 
+## Don't like it?
+
+If you decide this optimization isn't for you, reverting is straightforward. Simply run the following PowerShell commands (**as administrator**) to delete the custom registry settings:
+
+```powershell
+Remove-Item -Path "HKCU:\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags" -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item -Path "HKCU:\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" -Recurse -Force -ErrorAction SilentlyContinue
+```
+
+After running these commands, log out of your account or restart your computer to allow Windows to rebuild its default folder view settings.
+
 ## Conclusion
 
 After applying these changes, Windows Explorer should be noticeably faster and more responsive, especially on older systems.
