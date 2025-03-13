@@ -16,11 +16,20 @@
 </div>
 
 <style>
+	.markdown-container :global(h1),
+	.markdown-container :global(h2),
+	.markdown-container :global(h3),
+	.markdown-container :global(h4),
+	.markdown-container :global(h5),
+	.markdown-container :global(h6) {
+		margin: 0.8rem 0;
+		font-weight: 600;
+	}
+
 	.markdown-container :global(h1) {
 		font-size: 2.4rem;
 		text-align: center;
 		color: var(--primary);
-		font-weight: 600;
 	}
 
 	.markdown-container :global(h2),
@@ -29,7 +38,6 @@
 	.markdown-container :global(h5),
 	.markdown-container :global(h6) {
 		color: var(--accent);
-		font-weight: 600;
 	}
 
 	.markdown-container :global(h2) {
@@ -150,5 +158,6 @@
 	.markdown-container :global(blockquote) {
 		border-left: 3px solid var(--secondary);
 		padding-left: 1rem;
+		filter: brightness(0.75);
 	}
 </style>

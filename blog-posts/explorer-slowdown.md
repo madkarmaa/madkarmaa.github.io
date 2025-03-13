@@ -1,10 +1,10 @@
-# Windows Explorer Performance Issues
+# Windows Explorer's performance SUCKS
 
 > Yes, that's right, especially on older hardware.
 
 ## The PUF
 
-> Potentially Unwanted Feature
+> "Potentially Unwanted Feature"
 
 There's a feature in Windows Explorer that, while potentially useful to some users, can significantly slow down your browsing experience and unnecessarily stress your SSD. It's called **Automatic Folder Discovery**.
 
