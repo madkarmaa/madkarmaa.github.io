@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { inview, type Options } from 'svelte-inview';
 	import { getContext, type Snippet } from 'svelte';
+	import { cubicOut } from 'svelte/easing';
+	import { fly } from 'svelte/transition';
 	import { type TextSide } from '.';
 	import { isMobileDevice } from '@/utils';
 
@@ -7,18 +10,35 @@
 
 	type Props = { image?: Snippet; children: Snippet };
 	let { image, children }: Props = $props();
+
+	const inviewOptions: Options = {
+		unobserveOnEnter: true
+	};
+
+	let isInView: boolean = $state(false);
+
+	const handleInView = () => {
+		isInView = true;
+	};
 </script>
 
-<div class="section-item {textSide} flex gap-8">
-	{#if image && !isMobileDevice()}
-		<div class="image-container justify-center max-w-full">
-			{@render image?.()}
+<div class="inview-detector" use:inview={inviewOptions} oninview_enter={handleInView}>
+	{#if isInView}
+		<div
+			class="section-item {textSide} flex gap-8"
+			in:fly={{ y: 100, duration: 750, easing: cubicOut }}
+		>
+			{#if image && !isMobileDevice()}
+				<div class="image-container justify-center max-w-full">
+					{@render image()}
+				</div>
+			{/if}
+
+			<div class="section-content">
+				{@render children()}
+			</div>
 		</div>
 	{/if}
-
-	<div class="section-content">
-		{@render children()}
-	</div>
 </div>
 
 <style>
