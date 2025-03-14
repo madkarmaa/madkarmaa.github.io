@@ -10,7 +10,7 @@
 	<title>{title} - blog</title>
 </svelte:head>
 
-<main class="p-6">
+<main class="p-6 md:p-9">
 	<div class="mb-4">
 		<a href="/blog" class="text-primary hover:text-accent transition-colors">
 			<Icon name="arrow-left" color="var(--text)" />
