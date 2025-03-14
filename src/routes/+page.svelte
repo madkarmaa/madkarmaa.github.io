@@ -5,11 +5,8 @@
 
 <Heading.Heading text="MadKarma">
 	{#snippet links()}
-		<Heading.Link text="test" href="/url2qrcode" />
-		<Heading.Link text="test" href="/url2qrcode" />
-		<Heading.Link text="test" href="/url2qrcode" />
-		<Heading.Link text="test" href="/url2qrcode" />
-		<Heading.Link text="test" href="/url2qrcode" />
+		<Heading.Link text="Blog" href="/blog" decor />
+		<Heading.Link text="GitHub" href="https://github.com/madkarmaa" decor />
 	{/snippet}
 </Heading.Heading>
 
