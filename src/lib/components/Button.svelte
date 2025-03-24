@@ -8,6 +8,7 @@
 		class?: ClassValue;
 	} & HTMLButtonAttributes; // https://github.com/sveltejs/svelte/issues/12539#issuecomment-2243225694
 
+	// https://www.reddit.com/r/sveltejs/comments/1dodc08/comment/la8za5c
 	let { text, textOnClick, class: className = '', ...restProps }: Props = $props();
 
 	let clicked: boolean = $state(false);
