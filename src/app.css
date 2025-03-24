@@ -26,6 +26,50 @@
 	scroll-behavior: smooth;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0.8rem 0;
+	font-weight: 600 !important;
+}
+
+h1 {
+	font-size: 2.4rem !important;
+	text-align: center;
+	color: var(--primary) !important;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--accent) !important;
+}
+
+h2 {
+	font-size: 2rem !important;
+}
+
+h3 {
+	font-size: 1.8rem !important;
+}
+
+h4 {
+	font-size: 1.6rem !important;
+}
+
+h5 {
+	font-size: 1.4rem !important;
+}
+
+h6 {
+	font-size: 1.2rem !important;
+}
+
 input[type='text'],
 input[type='text']:focus {
 	border: none !important;

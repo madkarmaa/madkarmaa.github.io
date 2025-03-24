@@ -61,3 +61,6 @@ export class HTTPError extends Error {
 
 export const calculateReadTime = (text: string, wordsPerMinute: number = 200): number =>
 	Math.ceil(text.split(' ').length / wordsPerMinute);
+
+export const range = (min: number, max: number): number =>
+	Math.floor(Math.random() * (max - min + 1)) + min;

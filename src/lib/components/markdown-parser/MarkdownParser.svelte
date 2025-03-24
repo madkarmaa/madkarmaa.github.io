@@ -16,50 +16,6 @@
 </div>
 
 <style>
-	.markdown-container :global(h1),
-	.markdown-container :global(h2),
-	.markdown-container :global(h3),
-	.markdown-container :global(h4),
-	.markdown-container :global(h5),
-	.markdown-container :global(h6) {
-		margin: 0.8rem 0;
-		font-weight: 600;
-	}
-
-	.markdown-container :global(h1) {
-		font-size: 2.4rem;
-		text-align: center;
-		color: var(--primary);
-	}
-
-	.markdown-container :global(h2),
-	.markdown-container :global(h3),
-	.markdown-container :global(h4),
-	.markdown-container :global(h5),
-	.markdown-container :global(h6) {
-		color: var(--accent);
-	}
-
-	.markdown-container :global(h2) {
-		font-size: 2rem;
-	}
-
-	.markdown-container :global(h3) {
-		font-size: 1.8rem;
-	}
-
-	.markdown-container :global(h4) {
-		font-size: 1.6rem;
-	}
-
-	.markdown-container :global(h5) {
-		font-size: 1.4rem;
-	}
-
-	.markdown-container :global(h6) {
-		font-size: 1.2rem;
-	}
-
 	.markdown-container :global(em) {
 		font-style: italic;
 	}
