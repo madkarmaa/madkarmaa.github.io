@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { pwshObfuscate } from './encoder';
 	import { MarkdownParser } from '@/components/markdown-parser';
+	import Button from '@/components/Button.svelte';
 
 	const placeholder = 'Enter PowerShell code to obfuscate';
 	let input: string = $state('');
@@ -41,27 +42,22 @@
 				id="code"
 				bind:value={input}
 				{placeholder}
-				class="code-input hljs w-full p-4 font-mono"
+				class="hljs w-full p-4 font-mono rounded-lg"
 			/>
-			<button
-				type="submit"
-				class="convert-button p-3 cursor-pointer self-center transition-all bg-secondary hover:bg-accent"
-			>
-				Convert
-			</button>
+			<Button text="Convert" textOnClick="Done!" type="submit" class="self-center" />
 		</form>
 	</div>
 
 	<div class="output section">
 		<h2>Output</h2>
 		<MarkdownParser input={markdownContent} />
-		<button
+		<Button
+			text="Copy"
+			textOnClick="Copied!"
 			type="button"
-			class="convert-button p-3 cursor-pointer self-center transition-all bg-secondary hover:bg-accent"
+			class="self-center"
 			onclick={handleClick}
-		>
-			Copy
-		</button>
+		/>
 	</div>
 </div>
 
@@ -70,10 +66,5 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-	}
-
-	.code-input,
-	.convert-button {
-		@apply rounded-lg;
 	}
 </style>
