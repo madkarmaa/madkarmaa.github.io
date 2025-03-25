@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { pwshObfuscate } from './encoder';
+	import { pwshObfuscate } from './obfuscator';
 	import { MarkdownParser } from '@/components/markdown-parser';
 	import Button from '@/components/Button.svelte';
 

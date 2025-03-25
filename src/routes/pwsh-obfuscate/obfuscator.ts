@@ -17,19 +17,22 @@ const validEnvVars = [
 	'windir'
 ] as const;
 
-const fakeProcessEnv = {
-	ALLUSERSPROFILE: 'C:\\ProgramData',
-	CommonProgramFiles: 'C:\\Program Files\\Common Files',
-	CommonProgramW6432: 'C:\\Program Files\\Common Files',
-	ComSpec: 'C:\\WINDOWS\\system32\\cmd.exe',
-	PATHEXT: '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL',
-	ProgramData: 'C:\\ProgramData',
-	ProgramFiles: 'C:\\Program Files',
-	ProgramW6432: 'C:\\Program Files',
-	PUBLIC: 'C:\\Users\\Public',
-	SystemDrive: 'C:',
-	SystemRoot: 'C:\\WINDOWS',
-	windir: 'C:\\WINDOWS'
+// mock the Node.js process object
+const process = {
+	env: {
+		ALLUSERSPROFILE: 'C:\\ProgramData',
+		CommonProgramFiles: 'C:\\Program Files\\Common Files',
+		CommonProgramW6432: 'C:\\Program Files\\Common Files',
+		ComSpec: 'C:\\WINDOWS\\system32\\cmd.exe',
+		PATHEXT: '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL',
+		ProgramData: 'C:\\ProgramData',
+		ProgramFiles: 'C:\\Program Files',
+		ProgramW6432: 'C:\\Program Files',
+		PUBLIC: 'C:\\Users\\Public',
+		SystemDrive: 'C:',
+		SystemRoot: 'C:\\WINDOWS',
+		windir: 'C:\\WINDOWS'
+	}
 } as const;
 
 const generateMapping = (): CharEnvMapping => {
@@ -41,7 +44,7 @@ const generateMapping = (): CharEnvMapping => {
 		mapping[char] = {};
 
 		for (const envVar of validEnvVars) {
-			const value = fakeProcessEnv[envVar];
+			const value = process.env[envVar];
 
 			if (value && value.includes(char)) {
 				mapping[char][envVar] = [];
