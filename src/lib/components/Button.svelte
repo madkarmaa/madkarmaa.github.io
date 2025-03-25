@@ -8,12 +8,23 @@
 		class?: ClassValue;
 	} & HTMLButtonAttributes; // https://github.com/sveltejs/svelte/issues/12539#issuecomment-2243225694
 
+	// define the correct event type for button click handlers
+	type ButtonClickEvent = MouseEvent & { currentTarget: EventTarget & HTMLButtonElement };
+
 	// https://www.reddit.com/r/sveltejs/comments/1dodc08/comment/la8za5c
-	let { text, textOnClick, class: className = '', ...restProps }: Props = $props();
+	let {
+		text,
+		textOnClick,
+		class: className = '',
+		onclick: userOnClick,
+		...restProps
+	}: Props = $props();
 
 	let clicked: boolean = $state(false);
 
-	function handleClick() {
+	function handleClick(event: ButtonClickEvent) {
+		if (userOnClick) userOnClick(event);
+
 		if (!textOnClick) return;
 		clicked = true;
 
