@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { randomlyTrue } from '@/utils';
 
-	const INCREMENT_STEP = 0.01;
+	const INCREMENT_STEP = 0.001;
 
 	let scale = $state(1);
 	let verticalShift = $state(0);
