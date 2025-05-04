@@ -81,7 +81,8 @@ img {
 	pointer-events: none;
 }
 
-.noselect {
+.noselect, img {
+	-webkit-user-drag: none !important;
 	-webkit-touch-callout: none !important;
 	-webkit-user-select: none !important;
 	-khtml-user-select: none !important;
